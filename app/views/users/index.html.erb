@@ -2,10 +2,21 @@
   <ul class="users-list">
     <% @users.each do |user| %>
       <li>
-        Name: <%= user.name %>
-        <span class="profile-link">
-          <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
-        </span>
+        <div class="users-list-card">
+          <div>
+            <h4>Name: <%= user.name %></h4>
+          </div>
+          <div class="profile-link">
+            <%= link_to 'See Profile',  user_path(user), class: 'profile-link invite-button' %>
+          </div>
+          <div>
+            <% if user.is_friend?(@current_user) %>
+              <button>Friends</button>
+            <% else %>
+              <%= link_to("Add as a friend", '#', class: 'invite-button') %>
+            <% end %>
+          </div>
+        </div>
       </li>
     <% end %>
   </ul>

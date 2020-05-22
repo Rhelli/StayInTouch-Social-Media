@@ -1,11 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
 
+// SASS COLORS ---------------------------------------------------------//
 $primary-color-dark: #689f38;
 $primary-color: #8bc34a;
 $primary-color-light: #dcedc8;
 $primary-color-text: #212121;
 $divider-color: #bdbdbd;
 
+// GLOBALS -------------------------------------------------------------//
 * {
   margin: 0;
   padding: 0;
@@ -35,6 +37,18 @@ a {
   color: $primary-color-text;
 }
 
+// CUSTOM GLOBALS ------------------------------------------------------//
+
+.invite-button {
+  margin-left: auto;
+  border: 2px solid #689f38;
+  background-color: #dcedc8;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font: 400 16px/16px 'Roboto', sans-serif;
+}
+
+// NAVBAR --------------------------------------------------------------//
 .nav {
   display: flex;
   justify-content: space-between;
@@ -69,6 +83,7 @@ a {
   color: #fff;
 }
 
+// MAIN CONTAINER ----------------------------------------------------//
 .main {
   display: flex;
   flex-direction: column;
@@ -76,6 +91,7 @@ a {
   padding: 16px;
 }
 
+// FLASH MESSAGES ----------------------------------------------------//
 .notice,
 .alert {
   margin-bottom: 8px;
@@ -100,6 +116,7 @@ a {
   color: red;
 }
 
+// FORMS -------------------------------------------------------------//
 form {
   width: 80%;
   margin: 8px 0;
@@ -206,6 +223,7 @@ form {
   }
 }
 
+// TIMELINE ---------------------------------------------------------//
 .timeline {
   width: 100%;
   margin: 16px 0;
@@ -283,6 +301,7 @@ form {
   }
 }
 
+// USERS SECTION ------------------------------------------------------------//
 .users-section {
   width: 100%;
   margin: 10px;
@@ -295,12 +314,24 @@ form {
     background-color: #dcedc8;
     border-radius: 10px;
     padding: 40px 30px;
-  }
-
-  .profile-link {
-    font-size: 0.8em;
-    margin: 0 0 8px 0;
-    color: $primary-color-dark;
+    .users-list-card {
+      display: flex;
+      justify-content: start;
+      align-items: baseline;
+      align-content: center;
+      flex-flow: row nowrap;
+      div:first-child {
+        h4 {
+          font: 300 20px/20px 'Roboto', sans-serif;
+        }
+      }
+      .profile-link {
+        font: 400 16px/16px 'Roboto', sans-serif;
+        color: $primary-color-dark;
+        margin-right: 10px;
+        margin-left: auto;
+      }
+    }
   }
 }
 
@@ -318,13 +349,6 @@ form {
     justify-content: start;
     align-items: center;
     align-content: center;
-    .invite-button {
-      margin-left: auto;
-      border: 2px solid #689f38;
-      background-color: #dcedc8;
-      padding: 12px 18px;
-      border-radius: 5px;
-    }
   }
 
   .timeline {
@@ -336,6 +360,7 @@ form {
   }
 }
 
+// MEDIA QUERIES --------------------------------------------------------------//
 @media only screen and (min-width: 480px) {
   form {
     width: 60%;
