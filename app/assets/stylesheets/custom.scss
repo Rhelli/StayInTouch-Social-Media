@@ -291,6 +291,10 @@ form {
     margin-bottom: 16px;
     text-transform: capitalize;
     font-size: 1.2em;
+    border: 3px solid #689f38;
+    background-color: #dcedc8;
+    border-radius: 10px;
+    padding: 40px 30px;
   }
 
   .profile-link {
@@ -306,6 +310,21 @@ form {
 
   h2 {
     text-transform: capitalize;
+  }
+
+  .user-show-name-invite {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: start;
+    align-items: center;
+    align-content: center;
+    .invite-button {
+      margin-left: auto;
+      border: 2px solid #689f38;
+      background-color: #dcedc8;
+      padding: 12px 18px;
+      border-radius: 5px;
+    }
   }
 
   .timeline {
