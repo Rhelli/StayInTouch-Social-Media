@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  before_action :friendship_conditionals
   before_action :configure_permitted_parameters, if: :devise_controller?
+
+  def friendship_conditionals
+    @non_friends = User.non_friends(current_user)
+  end
 
   protected
 

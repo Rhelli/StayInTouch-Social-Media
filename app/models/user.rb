@@ -12,6 +12,9 @@ class User < ApplicationRecord
   has_many :friendships, dependent: :destroy
   has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friend_id'
 
+
+  scope :non_friends, -> (user) { where.not(id: (user.friendships + [user]).map(&:id)) }
+
   def current_user?
     current_user == user
   end
@@ -24,6 +27,12 @@ class User < ApplicationRecord
 
   def pending_requests
     friendships.map { |f| f.friend if !f.confirmed }.compact
+  end
+
+  def any_pending_requests?
+    if pending_requests.count > 0
+      return pending_requests
+    end
   end
 
   def friend_requests

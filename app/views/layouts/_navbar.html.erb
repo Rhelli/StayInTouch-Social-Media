@@ -8,6 +8,26 @@
       <%= menu_link_to 'All users', users_path %>
     </div>
   </div>
+  <div class="menu-item dropdown">
+    <button class="dropbutton">Friend Requests</button>
+    <div class="dropdown-content">
+      <% if @any_pending_requests %>
+      <% else %>
+        <p class="no-requests">No New Friend Requests</p>
+        <ul>
+          <% @non_friends.each do |u| %>
+            <li>
+              <div class="nav-non-friends-container">
+                <%= link_to "#{u.name}" %>
+                <%= link_to "Accept", '#', class: 'accept-decline nf-accept' %>
+                <%= link_to "Decline", '#', class: 'accept-decline nf-decline' %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
   <% if current_user %>
     <%= link_to 'My Profile', user_path(current_user) %>
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
