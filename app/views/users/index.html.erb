@@ -10,7 +10,9 @@
             <%= link_to 'See Profile',  user_path(user), class: 'profile-link invite-button' %>
           </div>
           <div>
-            <% if user.is_friend?(@current_user) %>
+            <% if current_user == user %>
+              <%= link_to "Edit my profile", user_path(user), class: 'invite-button' %> 
+            <% elsif @friend %>
               <button>Friends</button>
             <% else %>
               <%= link_to("Add as a friend", '#', class: 'invite-button') %>
