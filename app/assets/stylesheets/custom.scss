@@ -470,6 +470,38 @@ form {
   }
 }
 
+// FRIENDSHIPS PAGE -----------------------------------------------------------//
+.friendships-main-container {
+  width: 100%;
+  height: 100%;
+}
+
+.pending-friendships-container,
+.suggested-friendships-container {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #dcedc8;
+  border: 1px solid #8bc34a;
+}
+
+.pending-friendships-container {
+  background-color: #dcedc8;
+  border: 1px solid #8bc34a;
+  margin-bottom: 20px;
+}
+
+.suggested-friendships-container {
+  .nav-non-friends-container {
+    height: 110px;
+    padding: 10px;
+    a:first-child {
+      font: 500 22px/2px 'Roboto';
+    }
+  }
+}
+
 // MEDIA QUERIES --------------------------------------------------------------//
 @media only screen and (min-width: 480px) {
   form {
