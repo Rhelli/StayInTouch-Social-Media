@@ -8,19 +8,22 @@
       <%= menu_link_to 'All users', users_path %>
     </div>
   </div>
-  <div class="menu-item dropdown">
-    <button class="dropbutton">Friend Requests</button>
-    <div class="dropdown-content">
-      <% if @any_pending_requests %>
-
-      <% else %>
-        <p class="no-requests">No New Friend Requests</p>
-        <%= render 'layouts/suggested_friends' %>
-      <% end %>
+  <% if !current_user.nil? %>
+    <div class="menu-item dropdown">
+      <%= link_to "Friend Requests", friendships_path, class: 'dropbutton' %>
+      <div class="dropdown-content">
+        <% if @any_pending_requests %>
+  
+        <% else %>
+          <p class="no-requests">No New Friend Requests</p>
+          <%= render 'layouts/suggested_friends' %>
+        <% end %>
+      </div>
     </div>
-  </div>
-  <% if current_user %>
-    <%= link_to 'My Profile', user_path(current_user) %>
+    <div class="nav-profile">
+      <%= gravatar_for(current_user) %>
+      <%= link_to 'My Profile', user_path(current_user) %>
+    </div>
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
   <% else %>
     <%= link_to 'Sign in', user_session_path %>

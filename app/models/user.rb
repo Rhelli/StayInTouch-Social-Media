@@ -15,6 +15,10 @@ class User < ApplicationRecord
 
   scope :non_friends, -> (user) { where.not(id: (user.friendships + [user]).map(&:id)) }
 
+  def suggested_friends_array
+    suggested_friends = :non_friends
+  end
+
   def current_user?
     current_user == user
   end

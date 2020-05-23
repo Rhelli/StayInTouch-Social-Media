@@ -62,6 +62,17 @@ a {
   color: $primary-color-light;
   z-index: 2;
 
+  .nav-profile {
+    position: relative;
+  }
+  .gravatar {
+    position: absolute;
+    right: 100px;
+    top: -10px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
   .menu {
     width: 60%;
     justify-content: space-between;
@@ -99,6 +110,7 @@ a {
   font: 900 16px/16px 'Roboto';
   color: #dcedc8;
   border: none;
+  margin-right: 40px;
 }
 
 .dropdown {
@@ -194,6 +206,10 @@ a {
     &:hover {
       background-color: #8B3431;
     }
+  }
+  .gravatar {
+    position: initial;
+    margin-right: -10px;
   }
 }
 
