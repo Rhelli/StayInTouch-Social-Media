@@ -141,6 +141,11 @@ a {
   li {
     width: 100%;
   }
+  .gravatar {
+    border-radius: 50% 50%;
+    height: 50px;
+    margin-left: 10px;
+  }
 }
 
 .no-requests {
@@ -484,6 +489,12 @@ form {
   padding: 20px;
   background-color: #dcedc8;
   border: 1px solid #8bc34a;
+  .gravatar {
+    height: 80%;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 2px;
+  }
 }
 
 .pending-friendships-container {
@@ -496,8 +507,8 @@ form {
   .nav-non-friends-container {
     height: 110px;
     padding: 10px;
-    a:first-child {
-      font: 500 22px/2px 'Roboto';
+    .name {
+      font: 500 24px/24px 'Roboto';
     }
   }
 }

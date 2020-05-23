@@ -2,7 +2,8 @@
   <% @non_friends.each do |u| %>
     <li>
       <div class="nav-non-friends-container">
-        <%= link_to "#{u.name}" %>
+        <%= gravatar_for(u) %>
+        <%= link_to "#{u.name}", user_path(u), class: 'name' %>
         <%= link_to "Accept", '#', class: 'accept-decline nf-accept' %>
         <%= link_to "Decline", '#', class: 'accept-decline nf-decline' %>
       </div>
