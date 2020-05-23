@@ -12,19 +12,10 @@
     <button class="dropbutton">Friend Requests</button>
     <div class="dropdown-content">
       <% if @any_pending_requests %>
+
       <% else %>
         <p class="no-requests">No New Friend Requests</p>
-        <ul>
-          <% @non_friends.each do |u| %>
-            <li>
-              <div class="nav-non-friends-container">
-                <%= link_to "#{u.name}" %>
-                <%= link_to "Accept", '#', class: 'accept-decline nf-accept' %>
-                <%= link_to "Decline", '#', class: 'accept-decline nf-decline' %>
-              </div>
-            </li>
-          <% end %>
-        </ul>
+        <%= render 'layouts/suggested_friends' %>
       <% end %>
     </div>
   </div>

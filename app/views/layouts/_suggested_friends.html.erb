@@ -1,0 +1,11 @@
+<ul>
+  <% @non_friends.each do |u| %>
+    <li>
+      <div class="nav-non-friends-container">
+        <%= link_to "#{u.name}" %>
+        <%= link_to "Accept", '#', class: 'accept-decline nf-accept' %>
+        <%= link_to "Decline", '#', class: 'accept-decline nf-decline' %>
+      </div>
+    </li>
+  <% end %>
+</ul>
