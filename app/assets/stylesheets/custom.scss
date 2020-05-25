@@ -113,16 +113,31 @@ a {
 
 // Friend Requests Dropdown //
 .dropbutton {
+  position: relative;
   width: 160px;
   height: 50px;
   padding: 15px 0;
-  background-color: inherit;
+  background-color: transparent;
   color: #fff;
   text-transform: uppercase;
   font: 900 16px/16px 'Roboto';
   color: #dcedc8;
   border: none;
   margin-right: 40px;
+  z-index: 2;
+}
+
+.fq-note {
+  display: block;
+  position: absolute;
+  top: -2px;
+  right: 36px;
+  background-color: #FF5722;
+  opacity: 0.8;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  z-index: 1;
 }
 
 .dropdown {
