@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friend_id'
 
 
-  scope :non_friends, -> (user) { where.not(id: (user.friendships + [user]).map(&:id)) }
+  scope :non_friends, -> (user) { where.not(id: (user.friendships + [user]).map(&:id)).order(name: :asc) }
 
   def suggested_friends_array
     suggested_friends = :non_friends

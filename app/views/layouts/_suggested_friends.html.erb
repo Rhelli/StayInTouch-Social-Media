@@ -4,8 +4,7 @@
       <div class="nav-non-friends-container">
         <%= gravatar_for(u) %>
         <%= link_to "#{u.name}", user_path(u), class: 'name' %>
-        <%= link_to "Accept", '#', class: 'accept-decline nf-accept' %>
-        <%= link_to "Decline", '#', class: 'accept-decline nf-decline' %>
+        <%= link_to "Add As Friend", '#', class: 'accept-decline nf-accept' %>
       </div>
     </li>
   <% end %>
