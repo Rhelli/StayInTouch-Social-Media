@@ -25,7 +25,7 @@
     </div>
     <div class="nav-profile">
       <%= gravatar_for(current_user) %>
-      <%= link_to 'My Profile', user_path(current_user) %>
+      <%= link_to "#{current_user.name}", user_path(current_user) %>
     </div>
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
   <% else %>

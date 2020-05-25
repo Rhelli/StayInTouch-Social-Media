@@ -10,11 +10,14 @@ class FriendshipsController < ApplicationController
   end
 
   def create
-    @friendship = current_user.friendships.new(friendships_params)
+    @friendship = Friendship.create_inverse_friendship(current_user, params[:friend_id])
     if @friendship.save
-      flash.now[:success] = 'Your friend request has been sent.'
+      flash.now[:success] = "Friend Request Sent."
     else
-      flash.now[:danger] = 'An error occurred. Please try again.'
+      flash[:danger] = "An Error Occurred. Please Try Again!"
+      respond_to do |format|
+        format.js { render inline: "location.reload()"}
+      end
     end
   end
 
@@ -23,7 +26,8 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
-
+    Friendship.destroy_inverse_friendship(current_user, params[:friend_id])
+    redirect_to(request.referer)
   end
 
   private

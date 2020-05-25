@@ -50,6 +50,7 @@ a {
 }
 
 .add-button {
+  width: 120px;
   border: 2px solid #389C9F;
   background-color: #51A8AB;
   border-radius: 4px;
@@ -69,25 +70,34 @@ a {
   left: 0;
   right: 0;
   justify-content: space-between;
-  padding: 16px 48px;
+  padding: 0 48px;
   background-color: $primary-color-dark;
   color: $primary-color-light;
   z-index: 2;
 
+  a {
+    padding: 16px 0;
+  }
+
   .nav-profile {
     position: relative;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: start;
   }
   .gravatar {
-    position: absolute;
-    right: 100px;
-    top: -10px;
+    position: relative;
     height: 40px;
-    border-radius: 50%;
+    border-radius: 25% 10%;
+    margin-right: 10px;
+    border: 2px solid #A1C383;
   }
 
   .menu {
     width: 60%;
     justify-content: space-between;
+    padding: 16px 0;
 
     .menu-item {
       float: left;
@@ -115,15 +125,13 @@ a {
 .dropbutton {
   position: relative;
   width: 160px;
-  height: 50px;
-  padding: 15px 0;
+  height: auto;
   background-color: transparent;
   color: #fff;
   text-transform: uppercase;
   font: 900 16px/16px 'Roboto';
   color: #dcedc8;
   border: none;
-  margin-right: 40px;
   z-index: 2;
 }
 
@@ -141,6 +149,7 @@ a {
 }
 
 .dropdown {
+  padding: 16px 0;
   position: relative;
   display: inline-block;
   &:hover .dropdown-content {
@@ -154,7 +163,7 @@ a {
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 35px;
+  top: 51px;
   background-color: #8bc34a;
   min-width: 400px;
   height: auto;
@@ -181,9 +190,10 @@ a {
     width: 100%;
   }
   .gravatar {
-    border-radius: 50% 50%;
+    border-radius: 25% 10%;
     height: 50px;
     margin-left: 10px;
+    border-radius: 1px solid #A1C383;
   }
 }
 
