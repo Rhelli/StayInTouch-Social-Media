@@ -19,7 +19,7 @@
             <% else %>
               <%#= link_to("Add as a friend", '#', class: 'invite-button add-button') %>
               <%#= button_to send('friendships_path', friend_id: user.id), method: 'post', class: 'invite-button add-button' do %>
-              <%= link_to 'Add Friend', { :controller => 'friendship', :action => 'post', :id => friend.id, :user_id => current_user.id, :decision => true }, method: 'post', class: 'invite-button add-button' %>
+              <%= link_to 'Add Friend', { :controller => 'friendship', :action => 'post', :id => user.id }, method: 'post', class: 'invite-button add-button' %>
             <% end %>
           </div>
         </div>

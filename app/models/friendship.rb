@@ -2,6 +2,9 @@ class Friendship < ApplicationRecord
   belongs_to :user
   belongs_to :friend, class_name: 'User'
 
+  scope :confirmed_friends, -> { where('status = ?', true) }
+  scope :unconfirmed_friends, -> { where('status = ?', false) }
+
   # Creates new friendship for friend as well as user when created
   def self.create_inverse_friendship(user_id, friend_id)
     user_friendship = Friendship.create(user_id: user_id, friend_id: friend_id)
