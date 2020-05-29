@@ -12,12 +12,11 @@ class FriendshipsController < ApplicationController
   def create
     @friendship = current_user.friendships.build(friend_id: params[:user_id])
     if @friendship.save
-      flash.now[:success] = 'Friend request sent.'
+      flash[:success] = 'Friend request sent.'
+      redirect_back(fallback_location: root_path)
     else
       flash[:danger] = 'An error has occurred, please try again!'
-      respond_to do |format|
-        format.js { render inline: 'location.reload();'}
-      end
+      redirect_back(fallback_location: root_path)
     end
   end
 
@@ -30,9 +29,7 @@ class FriendshipsController < ApplicationController
       flash.now[:success] = 'Friend request accepted.'
     else
       flash[:danger] = 'An error occurred, please try again!'
-      respond_to do |format|
-        format.js { render inline: 'location.reload();' }
-      end
+      redirect_back(fallback_location: fallback_location)
     end
   end
 
@@ -42,9 +39,7 @@ class FriendshipsController < ApplicationController
     return unless @friendship
     @friendship.destroy
     flash[:success] = 'Friend request declined.'
-    respond_to do |format|
-      format.js { render inline: 'location.reload();' }
-    end
+    redirect_back(fallback_location: fallback_location)
   end
 
   def destroy
