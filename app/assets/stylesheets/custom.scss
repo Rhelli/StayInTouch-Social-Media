@@ -2,35 +2,19 @@
 
 
 // KEYFRAMES -----------------------------------------------------------//
-@-webkit-keyframes scale-in-top {
+@-webkit-keyframes fade-in {
   0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform-origin: 50% 0%;
-            transform-origin: 50% 0%;
-    opacity: 1;
+    opacity: 0;
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-transform-origin: 50% 0%;
-            transform-origin: 50% 0%;
     opacity: 1;
   }
 }
-@keyframes scale-in-top {
+@keyframes fade-in {
   0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-transform-origin: 50% 0%;
-            transform-origin: 50% 0%;
-    opacity: 1;
+    opacity: 0;
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-transform-origin: 50% 0%;
-            transform-origin: 50% 0%;
     opacity: 1;
   }
 }
@@ -133,6 +117,7 @@ a {
     width: 60%;
     justify-content: space-between;
     padding: 16px 0;
+    margin-right: auto;
 
     .menu-item {
       float: left;
@@ -291,22 +276,23 @@ a {
   flex-direction: column;
   align-items: center;
   padding: 16px;
-  margin-top: 60px;
+  margin-top: 120px;
 }
 
 // FLASH MESSAGES ----------------------------------------------------//
 .notice,
 .alert {
   position: fixed;
-  top: 80px;
-  left: 20px;
-  margin: 0 auto;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
   font: 400 18px/18px 'Roboto';
   color: #404040;
   width: auto;
   padding: 14px 16px;
-  -webkit-animation: scale-in-top 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: scale-in-top 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	-webkit-animation: fade-in 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  z-index: 100;
 }
 
 .notice {
@@ -316,8 +302,8 @@ a {
 }
 
 .alert {
-  background-color: #f6cfc6;
-  border: 3px solid #D7B5AD;
+  background-color: #D5F6C6;
+  border: 3px solid #BAD7AD;
   border-radius: 4px;
 }
 

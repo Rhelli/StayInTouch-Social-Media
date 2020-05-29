@@ -48,8 +48,4 @@ class User < ApplicationRecord
     friendship.confirmed = true
     friendship.save
   end
-
-  def is_friend?(user)
-    all_friends.include?(user)
-  end
 end

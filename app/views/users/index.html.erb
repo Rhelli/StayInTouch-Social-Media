@@ -16,8 +16,11 @@
           <div>
             <% if current_user == user %>
               <%= link_to "Edit my profile", user_path(user), class: 'invite-button' %>
+            <% elsif confirmed_friend(user) %>
+              <%= link_to "Friends", user_path(user), class: 'invite-button existing-friends-button' %>
+            <% elsif request_pending_for(user) %>
+              <%= link_to "Request Pending", user_path(user), class: 'invite-button pending-request-button' %>
             <% else %>
-              <%#= link_to("Add as a friend", '#', class: 'invite-button add-button') %>
               <%= button_to 'Add Friend', { :controller => 'friendships', action: 'create', :user_id => user.id }, :method => :post, class: 'invite-button add-button' %>
             <% end %>
           </div>
