@@ -4,7 +4,15 @@
       <div class="nav-non-friends-container">
         <%= gravatar_for(u) %>
         <%= link_to "#{u.name}", user_path(u), class: 'name' %>
-        <%= link_to "Add As Friend", '#', class: 'accept-decline nf-accept' %>
+        <div class="user-nav-buttons">
+          <% if confirmed_friend(u) %>
+            <%= link_to "Friends", user_path(u), class: 'confirmed-friend-button' %>
+          <% elsif request_pending_for(u) %>
+            <%= link_to "Request Pending", user_path(u), class: 'pending-request-button' %>
+          <% else %>
+            <%= button_to 'Add Friend', { :controller => 'friendships', action: 'create', :user_id => u.id }, :method => :post, 'data-turbolinks-scroll': false, class: 'add-friend-button' %>
+          <% end %>
+        </div>
       </div>
     </li>
   <% end %>
