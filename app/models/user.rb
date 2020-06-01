@@ -12,8 +12,8 @@ class User < ApplicationRecord
   has_many :friendships, dependent: :destroy
   has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friend_id'
 
-
-  scope :non_friends, -> (user) { where.not(id: (user.friendships + [user]).map(&:id)).order(name: :asc) }
+  scope :non_friends, -> (user) { where.not(id: (user.pending_requests + user.all_friends + [user]).map(&:id)).order(name: :asc) }
+  scope :pending_requests, -> (user) { where(id: (user.pending_requests).map(&:id)).order(name: :asc) }
 
   def suggested_friends_array
     suggested_friends = :non_friends
@@ -27,6 +27,10 @@ class User < ApplicationRecord
     friends_array = friendships.map { |f| f.friend if f.confirmed }
     friends_array + inverse_friendships.map { |f| f.user if f.confirmed }
     friends_array.compact
+  end
+
+  def confirmed_friends
+    friendships.where('confirmed = ?', true)
   end
 
   def pending_requests

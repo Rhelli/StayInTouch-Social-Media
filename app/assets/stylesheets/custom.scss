@@ -514,7 +514,14 @@ form {
       flex-flow: row nowrap;
       height: 60px;
       div:first-child {
+        .gravatar {
+          border-radius: 15% 5%;
+        }
         h4 {
+          display: inline-block;
+          position: relative;
+          bottom: 30px;
+          margin-left: 20px;
           font: 300 20px/20px 'Roboto', sans-serif;
         }
       }
@@ -623,7 +630,7 @@ form {
   background-color: #dcedc8;
   border: 1px solid #8bc34a;
   .gravatar {
-    height: 80%;
+    height: auto;
     margin-right: 20px;
     margin-left: 20px;
     border-radius: 2px;
@@ -636,7 +643,8 @@ form {
   margin-bottom: 20px;
 }
 
-.suggested-friendships-container {
+.suggested-friendships-container,
+.pending-friendships-container {
   .nav-non-friends-container {
     height: 110px;
     padding: 10px;
