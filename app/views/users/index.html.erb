@@ -8,20 +8,20 @@
           </div>
           <div class="profile-link">
             <% if current_user == user %>
-              <%= link_to 'My Profile',  user_path(user), class: 'profile-link invite-button' %>
+              <%= link_to 'My Profile',  user_path(user) %>
             <% else %>
-              <%= link_to 'See Profile',  user_path(user), class: 'profile-link invite-button' %>
+              <%= link_to 'See Profile',  user_path(user) %>
             <% end %>
           </div>
-          <div>
+          <div class="user-index-buttons">
             <% if current_user == user %>
-              <%= link_to "Edit my profile", user_path(user), class: 'invite-button' %>
+              <%= link_to "Edit my profile", user_path(user), class: 'edit-profile-button' %>
             <% elsif confirmed_friend(user) %>
-              <%= link_to "Friends", user_path(user), class: 'invite-button existing-friends-button' %>
+              <%= link_to "Friends", user_path(user), class: 'confirmed-friend-button' %>
             <% elsif request_pending_for(user) %>
-              <%= link_to "Request Pending", user_path(user), class: 'invite-button pending-request-button' %>
+              <%= link_to "Request Pending", user_path(user), class: 'pending-request-button' %>
             <% else %>
-              <%= button_to 'Add Friend', { :controller => 'friendships', action: 'create', :user_id => user.id }, :method => :post, class: 'invite-button add-button' %>
+              <%= button_to 'Add Friend', { :controller => 'friendships', action: 'create', :user_id => user.id }, :method => :post, 'data-turbolinks-scroll': false, class: 'add-friend-button' %>
             <% end %>
           </div>
         </div>

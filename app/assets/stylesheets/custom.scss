@@ -56,30 +56,6 @@ a {
   color: $primary-color-text;
 }
 
-// CUSTOM GLOBALS ------------------------------------------------------//
-
-.invite-button {
-  margin-left: auto;
-  border: 2px solid #689f38;
-  background-color: #dcedc8;
-  color: #689f38;
-  padding: 8px 12px;
-  border-radius: 5px;
-  font: 400 16px/16px 'Roboto', sans-serif;
-}
-
-.add-button {
-  width: 120px !important;
-  border: 2px solid #389C9F;
-  background-color: #51A8AB;
-  border-radius: 4px;
-  color: #fff;
-  padding: 11px 14px !important;
-  &:hover {
-    background-color: #31898B;
-  }
-}
-
 // NAVBAR --------------------------------------------------------------//
 .nav {
   display: flex;
@@ -117,7 +93,6 @@ a {
     width: 60%;
     justify-content: space-between;
     padding: 16px 0;
-    margin-right: auto;
 
     .menu-item {
       float: left;
@@ -510,12 +485,14 @@ form {
     background-color: #dcedc8;
     border-radius: 10px;
     padding: 40px 30px;
+    height: 150px;
     .users-list-card {
       display: flex;
       justify-content: start;
-      align-items: baseline;
+      align-items: center;
       align-content: center;
       flex-flow: row nowrap;
+      height: 60px;
       div:first-child {
         h4 {
           font: 300 20px/20px 'Roboto', sans-serif;
@@ -526,6 +503,61 @@ form {
         color: $primary-color-dark;
         margin-right: 10px;
         margin-left: auto;
+        a {
+          border: 2px solid #8bc34a;
+          border-radius: 4px;
+          padding: 12px 14px;
+          background-color: #A1C383;
+          color: #fafbfd;
+          text-shadow: #000 0px 0px 2px;
+          -webkit-font-smoothing: antialiased;
+          font: 600 16px/16px 'Roboto'
+        }
+      }
+      .user-index-buttons {
+        width: 150px;
+        font: 400 16px/16px 'Roboto';
+        a,
+        input[type="submit"] {
+          width: 150px;
+          font: 600 16px/16px 'Roboto';
+          text-transform: initial;
+          color: #fafbfd;
+          text-shadow: #000 0px 0px 2px;
+          -webkit-font-smoothing: antialiased;
+          padding: 12px 14px;
+          border-radius: 4px;
+        }
+        .add-friend-button {
+          background-color: #51A8AB;
+          border: 2px solid #31898B;
+          &:hover {
+            background-color: #389C9F;
+            border-color: #51A8AB;;
+          }
+        }
+        .edit-profile-button {
+          border: 2px solid #8bc34a;
+          border-radius: 4px;
+          padding: 12px 14px;
+          background-color: #A1C383;
+          font: 400 16px/16px 'Roboto'
+        }
+        .pending-request-button {
+          display: block;
+          width: 150px;
+          word-wrap: none;
+          white-space: nowrap;
+          background-color: #ABB2B9;
+        }
+        .confirmed-friend-button {
+          display: block;
+          text-align: center;
+          background-color: #7DCEA0;
+          font: 600 16px/16px 'Roboto';
+          padding: 14px 16px;
+          width: 150px !important;
+        }
       }
     }
   }
