@@ -15,7 +15,7 @@ class User < ApplicationRecord
   # Defines users with 'Add Friend' button, aka all users without a friendship with the current user
   scope :non_friends, -> (user) { where.not(id: (user.pending_requests + user.all_friends + [user]).map(&:id)).order(name: :asc) }
   # Defines users with an existing but not yet confirmed relationship with the current user
-  scope :pending_requests, -> (user) { where(id: (user.pending_requests + user.friend_requests).map(&:id)).order(name: :asc) }
+  scope :pending_requests, -> (user) { where(id: (user.pending_requests).map(&:id)).order(name: :asc) }
   # Defines all users that have requested friendship from the current user
   scope :invited_requests, -> (user) { where(id: (user.friend_requests).map(&:id)).order(name: :asc) }
 

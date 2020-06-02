@@ -4,6 +4,7 @@ class FriendshipsController < ApplicationController
   def index
     @friendships = Friendship.all
     @pending_requests = User.pending_requests(current_user)
+    @invited_requests = User.invited_requests(current_user)
   end
   
   def new
@@ -21,35 +22,28 @@ class FriendshipsController < ApplicationController
     end
   end
 
-  def accept_request
-    @friendship = Friendship.find_by(user_id: params[:user_id], friend_id: current_user.id, confirmed: false)
-    # Returns unless the friendship is found
+  def update
+    @friendship = current_user.inverse_friendships.find_by(user_id: params[:user_id])
     return unless @friendship
-    @friendship.status = true
-    if @friendship.save
-      flash.now[:success] = 'Friend request accepted.'
+    if request_params == 'true'
+      @friendship.accepted
+      current_user.friendships.create(friend_id: params[:user_id], confirmed: true)
+      flash[:info] = "Request accepted."
+      redirect_back(fallback_location: root_path)
     else
-      flash[:danger] = 'An error occurred, please try again!'
-      redirect_back(fallback_location: fallback_location)
+      @friendship.declined
+      flash[:info] = "Request declined."
+      redirect_back(fallback_location: root_path)
     end
-  end
-
-  def decline_request
-    @friendship = Friendship.find_by(friend_id: params[:user_id], friend_id: current_user.id, status: false)
-    # Return if no friendship is found
-    return unless @friendship
-    @friendship.destroy
-    flash[:success] = 'Friend request declined.'
-    redirect_back(fallback_location: fallback_location)
-  end
-
-  def destroy
-
   end
 
   private
 
   def friendship_params
     params.require(:friendship).permit(:friend, :user)
+  end
+
+  def request_params
+    params.require(:response)
   end
 end

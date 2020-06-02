@@ -635,6 +635,38 @@ form {
     margin-left: 20px;
     border-radius: 2px;
   }
+  .user-friendships-ad-buttons {
+    width: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    form {
+      width: auto;
+      padding: 5px 10px;
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+    .accept-button {
+      background-color: #8bc34a;
+      border: 2px solid #689f38;
+      &:hover {
+        background-color: #689f38;
+        border: 2px solid #8bc34a;
+      }
+    }
+
+    .decline-button {
+      background-color: #CD6155;
+      border: 2px solid #C0392B;
+      &:hover {
+        background-color: #C0392B;
+        border: 2px solid #CD6155;
+      }
+    }
+  }
 }
 
 .pending-friendships-container {
