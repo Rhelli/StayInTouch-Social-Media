@@ -1,5 +1,41 @@
 <section class="users-section">
   <ul class="users-list">
+    <li>
+      <div class="users-list-card">
+        <div>
+          <%= gravatar_for(current_user) %>
+          <h4>Name: <%= current_user.name %></h4>
+        </div>
+        <div class="profile-link">
+          <%= link_to 'My Profile',  user_path(current_user) %>
+        </div>
+        <div class="user-index-buttons">
+          <%= link_to "Edit my profile", user_path(current_user), class: 'edit-profile-button' %>
+        </div>
+      </div>
+    </li>
+    <% @all_friends.each do |user| %>
+      <li>
+        <div class="users-list-card">
+          <div>
+            <%= gravatar_for(user) %>
+            <h4>Name: <%= user.name %></h4>
+          </div>
+          <div class="profile-link">
+            <%= link_to 'See Profile',  user_path(user) %>
+          </div>
+          <div class="user-index-buttons">
+            <% if confirmed_friend(user) %>
+              <%= link_to "Friends", user_path(user), class: 'confirmed-friend-button' %>
+            <% elsif request_pending_for(user) %>
+              <%= link_to "Request Pending", user_path(user), class: 'pending-request-button' %>
+            <% else %>
+              <%= button_to 'Add Friend', { :controller => 'friendships', action: 'create', :user_id => user.id }, :method => :post, 'data-turbolinks-scroll': false, class: 'add-friend-button' %>
+            <% end %>
+          </div>
+        </div>
+      </li>
+    <% end %>
     <% @users.each do |user| %>
       <li>
         <div class="users-list-card">
@@ -8,16 +44,10 @@
             <h4>Name: <%= user.name %></h4>
           </div>
           <div class="profile-link">
-            <% if current_user == user %>
-              <%= link_to 'My Profile',  user_path(user) %>
-            <% else %>
-              <%= link_to 'See Profile',  user_path(user) %>
-            <% end %>
+            <%= link_to 'See Profile',  user_path(user) %>
           </div>
           <div class="user-index-buttons">
-            <% if current_user == user %>
-              <%= link_to "Edit my profile", user_path(user), class: 'edit-profile-button' %>
-            <% elsif confirmed_friend(user) %>
+            <% if confirmed_friend(user) %>
               <%= link_to "Friends", user_path(user), class: 'confirmed-friend-button' %>
             <% elsif request_pending_for(user) %>
               <%= link_to "Request Pending", user_path(user), class: 'pending-request-button' %>

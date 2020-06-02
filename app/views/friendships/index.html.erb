@@ -1,11 +1,11 @@
 <div class="friendships-main-container">
   <div class="pending-friendships-container">
     <h2>Pending Requests</h2>
-    <% if @pending_requests && @invited_requests %>
+    <% if !no_requests %>
       <%= render 'layouts/invited_requests'%>
       <%= render 'layouts/pending_requests' %>
     <% else %>
-      <h4>No new requests right now! Find new friends to in 'Suggested Friends' below</h4>
+      <h4>No new requests right now! Find new friends to in <strong>Suggested Friends</strong> below</h4>
     <% end %>
   </div>
   <div class="suggested-friendships-container">

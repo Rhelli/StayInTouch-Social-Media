@@ -241,7 +241,10 @@ a {
       border-radius: 4px;
       padding: 12px 14px;
       background-color: #A1C383;
-      font: 400 16px/16px 'Roboto'
+      font: 400 16px/16px 'Roboto';
+      a {
+        width: 150px;
+      }
     }
     .pending-request-button {
       display: block;
@@ -564,11 +567,14 @@ form {
           }
         }
         .edit-profile-button {
+          width: 150px;
+          display: block;
+          text-align: center;
           border: 2px solid #8bc34a;
           border-radius: 4px;
           padding: 12px 14px;
           background-color: #A1C383;
-          font: 400 16px/16px 'Roboto'
+          font: 600 16px/16px 'Roboto'
         }
         .pending-request-button {
           display: block;
@@ -634,6 +640,14 @@ form {
     margin-right: 20px;
     margin-left: 20px;
     border-radius: 2px;
+  }
+  h2 {
+    padding: 14px 16px;
+    font: 700 20px/20px 'Roboto';
+  }
+  h4 {
+    padding: 14px 16px;
+    font: 400 16px/16px 'Roboto';
   }
   .user-friendships-ad-buttons {
     width: auto;

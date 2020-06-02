@@ -31,4 +31,8 @@ module ApplicationHelper
     f = Friendship.find_by(user_id: current_user.id, friend_id: user.id, confirmed: true)
     user != current_user && f
   end
+
+  def any_pending_requests
+    User.all_requests(current_user).count < 1
+  end
 end
