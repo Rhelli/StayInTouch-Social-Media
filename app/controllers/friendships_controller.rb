@@ -31,10 +31,17 @@ class FriendshipsController < ApplicationController
       flash[:info] = "Request accepted."
       redirect_back(fallback_location: root_path)
     else
-      @friendship.declined
+      @friendship.destroy
       flash[:info] = "Request declined."
       redirect_back(fallback_location: root_path)
     end
+  end
+
+  def destroy
+    @friendship = Friendship.find_by(params[:friend_id])
+    @friendship.destroy
+    flash.now[:notice] = 'Request has been declined.'
+    redirect_back(fallback_location: root_path)
   end
 
   private
