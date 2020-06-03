@@ -84,6 +84,7 @@ a {
   .gravatar {
     position: relative;
     height: 40px;
+    width: auto;
     border-radius: 25% 10%;
     margin-right: 10px;
     border: 2px solid #A1C383;
@@ -187,6 +188,7 @@ a {
   .gravatar {
     border-radius: 25% 10%;
     height: 50px;
+    width: auto;
     margin-left: 10px;
     border-radius: 1px solid #A1C383;
   }
@@ -575,6 +577,8 @@ form {
       height: 60px;
       div:first-child {
         .gravatar {
+          height: 100px;
+          width: auto;
           border-radius: 15% 5%;
         }
         h4 {
@@ -663,10 +667,42 @@ form {
 
   .user-show-name-invite {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: start;
     align-items: center;
     align-content: center;
+
+    .user-name-btns {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      width: 100%;
+      background-color: #dcedc8;
+      padding: 14px 20px;
+      margin-top: 10px;
+    }
+
+    h2 {
+      margin-right: auto;
+    }
+    
+    .user-friend-buttons {
+      width: auto;
+      margin-left: auto;
+      input[type="submit"] {
+        width: 150px;
+        padding: 14px 16px;
+        font: 600 18px/18px 'Roboto';
+        color: #fafbfd;
+      }
+    }
+
+    .gravatar {
+      height: 203px;
+      width: auto;
+      border-radius: 5%;
+      border: 3px solid #dcedc8;
+    }
   }
 
   .timeline {
@@ -693,10 +729,11 @@ form {
   background-color: #dcedc8;
   border: 1px solid #8bc34a;
   .gravatar {
-    height: auto;
+    height: 80px;
+    width: auto;
     margin-right: 20px;
     margin-left: 20px;
-    border-radius: 2px;
+    border-radius: 15% 5%;
   }
   h2 {
     padding: 14px 16px;

@@ -18,7 +18,7 @@ module ApplicationHelper
 
   def gravatar_for(user)
     gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
-    gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?d=identicon"
+    gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?d=identicon&s=400"
     image_tag(gravatar_url, alt: user.name.titleize, class: "gravatar")
   end
 
