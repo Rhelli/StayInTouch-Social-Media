@@ -18,7 +18,7 @@ class User < ApplicationRecord
   scope :pending_requests, -> (user) { where(id: (user.pending_requests).map(&:id)).order(name: :asc) }
   # Defines all users that have requested friendship from the current user
   scope :invited_requests, -> (user) { where(id: (user.friend_requests).map(&:id)).order(name: :asc) }
-  # Defines both requests the current user has sent and has recieved
+  # Defines both requests the current user has sent and has received
   scope :all_requests, -> (user) { where(id: (user.pending_requests + user.friend_requests).map(&:id)).order(name: :asc) }
   # Defines all users that have been confirmed
   scope :confirmed_friends, -> (user) { where(id: (user.all_friends).map(&:id)).order(name: :asc) }
