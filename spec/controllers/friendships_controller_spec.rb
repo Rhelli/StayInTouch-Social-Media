@@ -46,7 +46,7 @@ RSpec.describe FriendshipsController, type: :controller do
 
     it 'deletes the friend request if the decline button is pressed' do
       patch :update, params: { user_id: user4.id, id: user4.friendships, response: false }
-      expect(User.invited_requests(user1)).to eq(0)
+      expect(User.invited_requests(user1)).to eq(0) 
     end
   end
 end
