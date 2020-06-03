@@ -11,12 +11,15 @@
   <% if !current_user.nil? %>
     <div class="menu-item dropdown">
       <%= link_to "Friend Requests", friendships_path, class: 'dropbutton' %>
-      <% if !any_pending_requests %>
+      <% if any_pending_requests %>
         <span class="fq-note"></span>
       <% end %>
       <div class="dropdown-content">
-        <% if !any_pending_requests %>
-          <%= render 'layouts/pending_requests' %>
+        <% if any_pending_requests %>
+          <div class="requests-exist">
+            <%= render 'layouts/nav_all_requests' %>
+            <%= render 'layouts/suggested_friends' %>
+          </div>
         <% else %>
           <p class="no-requests">No New Friend Requests</p>
           <%= render 'layouts/suggested_friends' %>

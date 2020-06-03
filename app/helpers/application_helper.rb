@@ -33,6 +33,6 @@ module ApplicationHelper
   end
 
   def any_pending_requests
-    User.all_requests(current_user).count < 1
+    User.invited_requests(current_user).count > 0
   end
 end
