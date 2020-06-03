@@ -27,6 +27,11 @@ module ApplicationHelper
     user != current_user && f
   end
 
+  def request_pending_from(user)
+    f = Friendship.find_by(user_id: user.id, friend_id: current_user.id, confirmed: false)
+    user != current_user && f
+  end
+
   def confirmed_friend(user)
     f = Friendship.find_by(user_id: current_user.id, friend_id: user.id, confirmed: true)
     user != current_user && f 

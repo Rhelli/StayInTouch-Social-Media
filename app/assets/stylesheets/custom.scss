@@ -677,8 +677,10 @@ form {
       flex-flow: row nowrap;
       align-items: center;
       width: 100%;
+      height: auto;
       background-color: #dcedc8;
-      padding: 14px 20px;
+      border-radius: 4px;
+      padding: 16px 20px;
       margin-top: 10px;
     }
 
@@ -691,9 +693,34 @@ form {
       margin-left: auto;
       input[type="submit"] {
         width: 150px;
-        padding: 14px 16px;
+        padding: 12px 16px;
         font: 600 18px/18px 'Roboto';
         color: #fafbfd;
+        text-shadow: #000 0px 0px 2px;
+        -webkit-font-smoothing: antialiased;
+      }
+      .pending-request-button {
+        background-color: #bdbdbd;
+        font: 600 16px/16px 'Roboto';
+        padding: 12px 16px;
+        border-radius: 4px;
+        border: 1px solid #ABB2B9;
+        color: #fafbfd;
+        text-shadow: #000 0px 0px 2px;
+        -webkit-font-smoothing: antialiased;
+      }
+      .confirmed-friend-button {
+        background-color: #51A8AB;
+        border: 2px solid #31898B;
+        padding: 12px 16px;
+        font: 600 16px/16px 'Roboto';
+        border-radius: 4px; 
+        color: #fafbfd;
+        text-shadow: #000 0px 0px 2px;
+        -webkit-font-smoothing: antialiased;
+      }
+      .add-friend-button {
+        text-transform: initial;
       }
     }
 
@@ -702,6 +729,35 @@ form {
       width: auto;
       border-radius: 5%;
       border: 3px solid #dcedc8;
+    }
+  }
+
+  .user-show-ad-btns {
+    display: flex;
+    flex-flow: row nowrap;
+    width: auto;
+    form {
+      width: auto;
+      input {
+        width: 150px;
+        margin-right: 10px;
+      }
+    }
+    .accept-button {
+      background-color: #A1C383;
+      border: 2px solid #689f38;
+      &:hover {
+        background-color: #8bc34a;
+        border-color: #8bc34a;
+      }
+    }
+    .decline-button {
+      background-color: #CD6155;
+      border: 2px solid #C0392B;
+      &:hover {
+        background-color: #C0392B;
+        border: 2px solid #CD6155;
+      }
     }
   }
 
