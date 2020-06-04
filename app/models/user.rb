@@ -22,14 +22,6 @@ class User < ApplicationRecord
   scope :all_requests, -> (user) { where(id: (user.pending_requests + user.friend_requests).map(&:id)).order(name: :asc) }
   # Defines all users that have been confirmed
   scope :confirmed_friends, -> (user) { where(id: (user.all_friends).map(&:id)).order(name: :asc) }
-  
-  def suggested_friends_array
-    suggested_friends = :non_friends
-  end
-
-  def current_user?
-    current_user == user
-  end
 
   def all_friends
     friends_array = friendships.map { |f| f.friend if f.confirmed }
@@ -45,19 +37,7 @@ class User < ApplicationRecord
     friendships.map { |f| f.friend if !f.confirmed }.compact
   end
 
-  def any_pending_requests?
-    if pending_requests.count > 0
-      return pending_requests
-    end
-  end
-
   def friend_requests
     inverse_friendships.map { |f| f.user if !f.confirmed }.compact
-  end
-
-  def confirm_friend(user)
-    friendship = inverse_friendships.find { |f| f.user == user }
-    friendship.confirmed = true
-    friendship.save
   end
 end
