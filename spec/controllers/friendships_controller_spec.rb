@@ -8,7 +8,7 @@ RSpec.describe FriendshipsController, type: :controller do
   let!(:user5) { User.create!(name: 'example5', email: 'example5@email.com', password: 'password', password_confirmation: 'password') }
   let!(:requested_friendship) { Friendship.create!(user_id: user1.id, friend_id: user2.id, confirmed: false) }
   let!(:incoming_friendship) { Friendship.create!(user_id: user4.id, friend_id: user1.id, confirmed: false) }
-  let!(:confirmed_friendship) { Friendship.create!(user_id: user3.id, friend_id: user1.id, confirmed: true) }
+  let(:confirmed_friendship) { Friendship.create!(user_id: user1.id, friend_id: user3.id, confirmed: true) }
   before { sign_in user1 }
   context '#index' do
     it 'should display new pending (outgoing) friendship requests' do
@@ -46,7 +46,7 @@ RSpec.describe FriendshipsController, type: :controller do
 
     it 'deletes the friend request if the decline button is pressed' do
       patch :update, params: { user_id: user4.id, id: user4.friendships, response: false }
-      expect(User.invited_requests(user1)).to eq(0) 
+      expect(User.invited_requests(user1).count).to be(0)
     end
   end
 end
