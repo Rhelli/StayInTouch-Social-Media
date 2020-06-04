@@ -17,9 +17,9 @@ module ApplicationHelper
   end
 
   def gravatar_for(user)
-    gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
+    gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?d=identicon&s=400"
-    image_tag(gravatar_url, alt: user.name.titleize, class: "gravatar")
+    image_tag(gravatar_url, alt: user.name.titleize, class: 'gravatar')
   end
 
   def request_pending_for(user)
@@ -34,7 +34,7 @@ module ApplicationHelper
 
   def confirmed_friend(user)
     f = Friendship.find_by(user_id: current_user.id, friend_id: user.id, confirmed: true)
-    user != current_user && f 
+    user != current_user && f
   end
 
   def any_pending_requests

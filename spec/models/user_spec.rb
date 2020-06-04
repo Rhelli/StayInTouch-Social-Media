@@ -73,7 +73,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'displays all of a users confirmed friends' do
-      f = Friendship.create!(user_id: user1.id, friend_id: user2.id, confirmed: true)
+      Friendship.create!(user_id: user1.id, friend_id: user2.id, confirmed: true)
       expect(User.confirmed_friends(user1)).to include(user2)
     end
   end

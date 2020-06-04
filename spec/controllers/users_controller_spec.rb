@@ -9,7 +9,7 @@ RSpec.describe UsersController, type: :controller do
   let!(:confirmed_friendship2) { Friendship.create!(user_id: user1.id, friend_id: user3.id, confirmed: true) }
   let!(:confirmed_friendship3) { Friendship.create!(user_id: user1.id, friend_id: user4.id, confirmed: false) }
   let!(:post1) { Post.create!(user_id: user1.id, content: 'Here is some content') }
-  
+
   before { sign_in user1 }
   context '#index' do
     it 'fetches the index correctly' do
@@ -32,7 +32,7 @@ RSpec.describe UsersController, type: :controller do
 
   context '#show' do
     it 'fetches the users profile correctly' do
-      get :show, params: { id: user1.id}
+      get :show, params: { id: user1.id }
       expect(response).to have_http_status(:success)
       expect(response).to render_template(:show)
       expect(user1.posts.count).to eq(1)

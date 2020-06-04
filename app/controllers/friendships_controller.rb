@@ -6,7 +6,7 @@ class FriendshipsController < ApplicationController
     @pending_requests = User.pending_requests(current_user)
     @invited_requests = User.invited_requests(current_user)
   end
-  
+
   def new
     @friendship = current_user.friendships.new
   end
@@ -15,26 +15,25 @@ class FriendshipsController < ApplicationController
     @friendship = current_user.friendships.build(friend_id: params[:user_id])
     if @friendship.save
       flash[:success] = 'Friend request sent.'
-      redirect_back(fallback_location: root_path)
     else
       flash[:danger] = 'An error has occurred, please try again!'
-      redirect_back(fallback_location: root_path)
     end
+    redirect_back(fallback_location: root_path)
   end
 
   def update
     @friendship = current_user.inverse_friendships.find_by(user_id: params[:user_id])
     return unless @friendship
+
     if request_params == 'true'
       @friendship.accepted
       current_user.friendships.create(friend_id: params[:user_id], confirmed: true)
-      flash[:info] = "Request accepted."
-      redirect_back(fallback_location: root_path)
+      flash[:info] = 'Request accepted.'
     else
       @friendship.destroy
-      flash[:info] = "Request declined."
-      redirect_back(fallback_location: root_path)
+      flash[:info] = 'Request declined.'
     end
+    redirect_back(fallback_location: root_path)
   end
 
   def destroy

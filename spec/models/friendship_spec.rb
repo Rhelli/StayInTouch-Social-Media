@@ -14,7 +14,7 @@ RSpec.describe Friendship, type: :model do
 
     it 'creates friendships with a default boolean of false' do
       f = friendship1
-      expect(f.confirmed).to eq(false) 
+      expect(f.confirmed).to eq(false)
     end
 
     it 'provides functionality to accept friendships' do

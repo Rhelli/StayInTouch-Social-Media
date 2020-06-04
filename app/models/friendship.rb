@@ -9,5 +9,4 @@ class Friendship < ApplicationRecord
   def declined
     update(confirmed: false)
   end
-
 end
