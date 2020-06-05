@@ -19,6 +19,31 @@
   }
 }
 
+@-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 // SASS COLORS ---------------------------------------------------------//
 $primary-color-dark: #fafbfd;
 $primary-color: #8bc34a;
@@ -96,6 +121,7 @@ a {
     transition-duration: 0.15s;
     text-transform: uppercase;
     font-size: 22px;
+    font-weight: 700;
     letter-spacing: 0.01em;
     img {
       margin-right: 10px;
@@ -105,6 +131,7 @@ a {
     &:hover {
       background-color: #101010;
       transition-duration: 0.2s;
+      text-shadow: 2px 3px 0px #2020D2;
       -webkit-box-shadow: 0px 0px 15px -1px rgba(0,0,0,1);
       -moz-box-shadow: 0px 0px 15px -1px rgba(0,0,0,1);
       box-shadow: 0px 0px 15px -1px rgba(0,0,0,1);
@@ -113,6 +140,7 @@ a {
 
   a {
     padding: 16px 0;
+    text-shadow: 2px 3px 0px #000000;
   }
 
   .nav-profile {
@@ -130,6 +158,13 @@ a {
       -webkit-box-shadow: 0px 0px 15px -1px rgba(0,0,0,1);
       -moz-box-shadow: 0px 0px 15px -1px rgba(0,0,0,1);
       box-shadow: 0px 0px 15px -1px rgba(0,0,0,1);
+      .gravatar {
+        border-right: 1px solid #2020D2;
+        border-bottom: 2px solid #2020D2;
+      }
+      a {
+        text-shadow: 2px 3px 0px #2020D2;
+      }
     }
   }
   .gravatar {
@@ -138,7 +173,8 @@ a {
     width: auto;
     border-radius: 25% 10%;
     margin-right: 10px;
-    border: 1px solid #101010;
+    border-right: 1px solid #101010;
+    border-bottom: 2px solid #101010;
   }
 
   .menu {
@@ -167,6 +203,9 @@ a {
         -webkit-box-shadow: 0px 0px 15px -1px rgba(0,0,0,1);
         -moz-box-shadow: 0px 0px 15px -1px rgba(0,0,0,1);
         box-shadow: 0px 0px 15px -1px rgba(0,0,0,1);
+        a {
+          text-shadow: 2px 3px 0px #2020D2;
+        }
       }
       .menu-item {
         text-align: center;
@@ -187,8 +226,11 @@ a {
     background-color: #101010;
     transition-duration: 0.2s;
     -webkit-box-shadow: 0px 0px 15px -1px rgba(0,0,0,1);
-      -moz-box-shadow: 0px 0px 15px -1px rgba(0,0,0,1);
-      box-shadow: 0px 0px 15px -1px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 15px -1px rgba(0,0,0,1);
+    box-shadow: 0px 0px 15px -1px rgba(0,0,0,1);
+    a {
+      text-shadow: 2px 3px 0px #2020D2;
+    }
   }
 }
 
@@ -211,6 +253,7 @@ a {
   &:hover {
     background-color: #101010;
     transition-duration: 0.2s;
+    text-shadow: 2px 3px 0px #2020D2;
     -webkit-box-shadow: 0px 0px 15px -1px rgba(0,0,0,1);
       -moz-box-shadow: 0px 0px 15px -1px rgba(0,0,0,1);
       box-shadow: 0px 0px 15px -1px rgba(0,0,0,1);
@@ -445,6 +488,8 @@ a {
   margin-top: 27px;
   overflow: hidden;
   overflow-y: auto;
+  -webkit-animation: slide-in-top 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000) both;
+  animation: slide-in-top 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000) both;
 }
 
 .main-signin {
