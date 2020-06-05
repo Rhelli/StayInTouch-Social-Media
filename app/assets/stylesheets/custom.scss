@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
-
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 
 // KEYFRAMES -----------------------------------------------------------//
 @-webkit-keyframes fade-in {
@@ -20,11 +20,12 @@
 }
 
 // SASS COLORS ---------------------------------------------------------//
-$primary-color-dark: #689f38;
+$primary-color-dark: #fafbfd;
 $primary-color: #8bc34a;
 $primary-color-light: #dcedc8;
 $primary-color-text: #212121;
 $divider-color: #bdbdbd;
+$majorelle-color: #0000CC;
 
 // GLOBALS -------------------------------------------------------------//
 * {
@@ -35,10 +36,17 @@ $divider-color: #bdbdbd;
 }
 
 body {
-  background: #fff;
+  background-color: $majorelle-color;
+  background-image: image-url('dark-dot');
   position: relative;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
+  height: 100vh;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
 
 h1,
@@ -56,7 +64,7 @@ a {
   color: $primary-color-text;
 }
 
-// NAVBAR --------------------------------------------------------------//
+// BAR --------------------------------------------------------------//
 .nav {
   display: flex;
   position: fixed;
@@ -65,10 +73,26 @@ a {
   left: 0;
   right: 0;
   justify-content: space-between;
-  padding: 0 48px;
-  background-color: $primary-color-dark;
+  padding: 5px 48px;
+  background-color: $majorelle-color;
+  background-image: image-url('dark-dot');
   color: $primary-color-light;
   z-index: 2;
+
+  .nav-logo {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    align-content: center;
+    flex-flow: row nowrap;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    img {
+      margin-right: 10px;
+      height: 35px;
+      width: auto;
+    }
+  }
 
   a {
     padding: 16px 0;
@@ -83,7 +107,7 @@ a {
   }
   .gravatar {
     position: relative;
-    height: 40px;
+    height: 35px;
     width: auto;
     border-radius: 25% 10%;
     margin-right: 10px;
@@ -109,8 +133,7 @@ a {
 
 .nav a {
   color: $primary-color-light;
-  text-transform: uppercase;
-  font-weight: 900;
+  font: 700 18px/18px 'Montserrat', sans-serif;
 }
 
 .nav a:hover {
@@ -124,8 +147,6 @@ a {
   height: auto;
   background-color: transparent;
   color: #fff;
-  text-transform: uppercase;
-  font: 900 16px/16px 'Roboto';
   color: #dcedc8;
   border: none;
   z-index: 2;
@@ -328,12 +349,33 @@ a {
 }
 
 // MAIN CONTAINER ----------------------------------------------------//
+.main-flex {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+}
+
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 16px;
-  margin-top: 120px;
+  width: 94%;
+  height: 90%;
+  background-color: #fafbfd;
+  background-image: image-url('cream-pixels');
+  -webkit-box-shadow: 0px 0px 22px -1px rgba(1,1,38,0.78);
+  -moz-box-shadow: 0px 0px 22px -1px rgba(1,1,38,0.78);
+  box-shadow: 0px 0px 22px -1px rgba(1,1,38,0.78);
+  padding: 20px 30px;
+  border-radius: 6px;
+  border: 1px solid #000099;
+  margin-top: 27px;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 // FLASH MESSAGES ----------------------------------------------------//
@@ -563,8 +605,9 @@ form {
     margin-bottom: 16px;
     text-transform: capitalize;
     font-size: 1.2em;
-    border: 3px solid #689f38;
-    background-color: #dcedc8;
+    border: 2px solid #BFBFF2;
+    background-color: #DFDFF9;
+    background-image: image-url('corrugation');
     border-radius: 10px;
     padding: 40px 30px;
     height: 150px;
