@@ -6,7 +6,8 @@
     <div class="user-name-btns">
       <h2><%= "Name: #{@user.name}" %></h2>
       <div class="user-friend-buttons">
-        <% if confirmed_friend(@user) %>
+        <% if current_user == @user %>
+        <% elsif confirmed_friend(@user) %>
           <%= link_to "Friends", user_path(@user), class: 'confirmed-friend-button' %>
         <% elsif request_pending_for(@user) %>
           <%= link_to "Friend Request Pending", user_path(@user), class: 'pending-request-button' %>

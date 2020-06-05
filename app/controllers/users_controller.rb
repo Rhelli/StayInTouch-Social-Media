@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all.where('id != ?', current_user.id).order(name: :asc)
     @all_friends = User.confirmed_friends(current_user)
+    @pending_requests = User.pending_requests(current_user)
   end
 
   def show
