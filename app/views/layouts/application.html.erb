@@ -21,9 +21,15 @@
       </div>
     <% end %>
     <div class="main-flex">
-      <main class="main">
-        <%= yield %>
-      </main>
+      <% unless current_user.nil? %>
+        <main class="main">
+          <%= yield %>
+        </main>
+      <% else %>
+        <main class="main-signin">
+          <%= yield %>
+        </main>
+      <% end %>
     </div>
   </body>
 </html>
