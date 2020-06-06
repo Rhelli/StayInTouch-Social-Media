@@ -1,0 +1,17 @@
+<ul>
+<h3>Pending Requests</h3>
+  <% User.invited_requests(current_user).each do |u| %>
+    <li>
+      <div class="nav-non-friends-container">
+        <%= gravatar_for(u) %>
+        <%= link_to "#{u.name}", user_path(u), class: 'name' %>
+        <div class="user-nav-buttons nav-ad-buttons">
+          <% if !confirmed_friend(u) %>
+            <%= button_to 'Accept', { :controller => 'friendships', action: 'update', :user_id => u.id, :id => u.friendships, response: true }, :method => :patch, class: 'add-friend-button accept-button' %>
+            <%= button_to 'Decline', { :controller => 'friendships', action: 'update', :user_id => u.id, :id => u.friendships, response: false }, :method => :delete, data: { confirm: 'Are you sure?' }, class: 'add-friend-button decline-button' %>
+          <% end %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>

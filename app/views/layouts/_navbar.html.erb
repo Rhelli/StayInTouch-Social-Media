@@ -1,0 +1,37 @@
+<nav class="nav">
+  <%= link_to 'Stay in touch', root_path %>
+  <div class="menu">
+    <div class="menu-item">
+      <%= menu_link_to 'Timeline', posts_path %>
+    </div>
+    <div class="menu-item">
+      <%= menu_link_to 'All users', users_path %>
+    </div>
+  </div>
+  <% if !current_user.nil? %>
+    <div class="menu-item dropdown">
+      <%= link_to "Friend Requests", friendships_path, class: 'dropbutton' %>
+      <% if any_pending_requests %>
+        <span class="fq-note"></span>
+      <% end %>
+      <div class="dropdown-content">
+        <% if any_pending_requests %>
+          <div class="requests-exist">
+            <%= render 'layouts/nav_all_requests' %>
+            <%= render 'layouts/suggested_friends' %>
+          </div>
+        <% else %>
+          <p class="no-requests">No New Friend Requests</p>
+          <%= render 'layouts/suggested_friends' %>
+        <% end %>
+      </div>
+    </div>
+    <div class="nav-profile">
+      <%= gravatar_for(current_user) %>
+      <%= link_to "#{current_user.name}", user_path(current_user) %>
+    </div>
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to 'Sign in', user_session_path %>
+  <% end %>
+</nav>
