@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   let!(:user1) { User.create!(name: 'Steve', email: 'steve@email.com', password: 'password', password_confirmation: 'password') }
-
+  let!(:user2) { User.create!(name: 'Jobs', email: 'apple@email.com', password: 'password', password_confirmation: 'password') }
+  let!(:user3) { User.create!(name: 'Jack', email: 'jack@email.com', password: 'password', password_confirmation: 'password') }
+  let!(:friendship1) { Friendship.create!(user_id: user2.id, friend_id: user3.id, confirmed: true) }
   context 'validations' do
     it 'rejects post submissions without content' do
       no_content = Post.new(user_id: user1.id, content: nil)
