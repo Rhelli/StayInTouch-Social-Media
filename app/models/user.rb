@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :friendships, dependent: :destroy
   has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friend_id'
 
-  scope :non_friends, ->(user) { where.not(id: (user.pending_requests + user.all_friends + [user]).map(&:id)).order(name: :asc) }
+  scope :non_friends, ->(user) { where.not(id: (user.pending_requests + user.friend_requests + user.all_friends + [user]).map(&:id)).order(name: :asc) }
   scope :pending_requests, ->(user) { where(id: user.pending_requests.map(&:id)).order(name: :asc) }
   scope :invited_requests, ->(user) { where(id: user.friend_requests.map(&:id)).order(name: :asc) }
   scope :all_requests, ->(user) { where(id: (user.pending_requests + user.friend_requests).map(&:id)).order(name: :asc) }

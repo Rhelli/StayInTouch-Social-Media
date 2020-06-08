@@ -36,6 +36,33 @@
         </div>
       </li>
     <% end %>
+    <% @invited_requests.each do |user| %>
+      <li>
+        <div class="users-list-card">
+          <div>
+            <%= gravatar_for(user) %>
+            <h4>Name: <%= user.name %></h4>
+          </div>
+          <% if confirmed_friend(user) %>
+            <div class="profile-link">
+              <%= link_to 'See Profile',  user_path(user) %>
+            </div>
+          <% end %>
+          <div class="user-index-buttons ad-btns">
+            <% if confirmed_friend(user) %>
+              <%= link_to "Friends", user_path(user), class: 'confirmed-friend-button' %>
+            <% elsif request_pending_for(user) %>
+              <%= link_to "Request Pending", user_path(user), class: 'pending-request-button' %>
+            <% else %>
+              <div class="user-show-ad-btns">
+                <%= button_to 'Accept', { :controller => 'friendships', action: 'update', :user_id => user.id, :id => user.friendships, response: true }, :method => :patch, class: 'add-friend-button accept-button' %>
+                <%= button_to 'Decline', { :controller => 'friendships', action: 'update', :user_id => user.id, :id => user.friendships, response: false }, :method => :delete, data: { confirm: 'Are you sure?' }, class: 'add-friend-button decline-button' %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </li>
+    <% end %>
     <% @pending_requests.each do |user| %>
       <li>
         <div class="users-list-card">
