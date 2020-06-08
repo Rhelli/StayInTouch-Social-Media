@@ -1,7 +1,7 @@
 class Friendship < ApplicationRecord
   belongs_to :user
   belongs_to :friend, class_name: 'User'
- 
+
   validate :not_inviting_self
   validate :prevent_duplicates, if: :inverse_exists?
   validates :friend, uniqueness: { scope: :user, message: 'Invitation already sent.' }

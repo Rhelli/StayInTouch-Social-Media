@@ -5,7 +5,7 @@ RSpec.describe PostsController, type: :controller do
   let!(:user2) { User.create!(name: 'user2', email: 'example2@email.com', password: 'password', password_confirmation: 'password') }
   let!(:user3) { User.create!(name: 'user3', email: 'example3@email.com', password: 'password', password_confirmation: 'password') }
   let!(:confirmed_friendship) { Friendship.create!(user_id: user1.id, friend_id: user2.id, confirmed: true) }
-  let!(:other_friendship) { Friendship.create!(user_id: user2.id, friend_id: user3.id, confirmed: true) } 
+  let!(:other_friendship) { Friendship.create!(user_id: user2.id, friend_id: user3.id, confirmed: true) }
   before { sign_in user1 }
 
   context '#index' do
