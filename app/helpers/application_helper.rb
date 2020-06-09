@@ -22,6 +22,7 @@ module ApplicationHelper
     image_tag(gravatar_url, alt: user.name.titleize, class: 'gravatar')
   end
 
+=begin 
   def request_pending_for(user)
     f = Friendship.find_by(user_id: current_user.id, friend_id: user.id, confirmed: false)
     user != current_user && f
@@ -40,4 +41,7 @@ module ApplicationHelper
   def any_pending_requests
     User.invited_requests(current_user).count > 0
   end
+
+=end
+
 end

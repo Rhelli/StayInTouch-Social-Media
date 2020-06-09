@@ -25,13 +25,7 @@
             <%= link_to 'See Profile',  user_path(user) %>
           </div>
           <div class="user-index-buttons">
-            <% if confirmed_friend(user) %>
-              <%= link_to "Friends", user_path(user), class: 'confirmed-friend-button' %>
-            <% elsif request_pending_for(user) %>
-              <%= link_to "Request Pending", user_path(user), class: 'pending-request-button' %>
-            <% else %>
-              <%= button_to 'Add Friend', { :controller => 'friendships', action: 'create', :user_id => user.id }, :method => :post, 'data-turbolinks-scroll': false, class: 'add-friend-button' %>
-            <% end %>
+            <%= user_index_buttons(user) %>
           </div>
         </div>
       </li>
@@ -48,17 +42,8 @@
               <%= link_to 'See Profile',  user_path(user) %>
             </div>
           <% end %>
-          <div class="user-index-buttons ad-btns">
-            <% if confirmed_friend(user) %>
-              <%= link_to "Friends", user_path(user), class: 'confirmed-friend-button' %>
-            <% elsif request_pending_for(user) %>
-              <%= link_to "Request Pending", user_path(user), class: 'pending-request-button' %>
-            <% else %>
-              <div class="user-show-ad-btns">
-                <%= button_to 'Accept', { :controller => 'friendships', action: 'update', :user_id => user.id, :id => user.friendships, response: true }, :method => :patch, class: 'add-friend-button accept-button' %>
-                <%= button_to 'Decline', { :controller => 'friendships', action: 'update', :user_id => user.id, :id => user.friendships, response: false }, :method => :delete, data: { confirm: 'Are you sure?' }, class: 'add-friend-button decline-button' %>
-              </div>
-            <% end %>
+          <div class="user-index-buttons invited-buttons">
+            <%= invited_requests_buttons(user) %>
           </div>
         </div>
       </li>
@@ -74,13 +59,7 @@
             <%= link_to 'See Profile',  user_path(user) %>
           </div>
           <div class="user-index-buttons">
-            <% if confirmed_friend(user) %>
-              <%= link_to "Friends", user_path(user), class: 'confirmed-friend-button' %>
-            <% elsif request_pending_for(user) %>
-              <%= link_to "Request Pending", user_path(user), class: 'pending-request-button' %>
-            <% else %>
-              <%= button_to 'Add Friend', { :controller => 'friendships', action: 'create', :user_id => user.id }, :method => :post, 'data-turbolinks-scroll': false, class: 'add-friend-button' %>
-            <% end %>
+            <%= user_index_buttons(user) %>
           </div>
         </div>
       </li>
@@ -96,13 +75,7 @@
             <%= link_to 'See Profile',  user_path(user) %>
           </div>
           <div class="user-index-buttons">
-            <% if confirmed_friend(user) %>
-              <%= link_to "Friends", user_path(user), class: 'confirmed-friend-button' %>
-            <% elsif request_pending_for(user) %>
-              <%= link_to "Request Pending", user_path(user), class: 'pending-request-button' %>
-            <% else %>
-              <%= button_to 'Add Friend', { :controller => 'friendships', action: 'create', :user_id => user.id }, :method => :post, 'data-turbolinks-scroll': false, class: 'add-friend-button' %>
-            <% end %>
+            <%= user_index_buttons(user) %>
           </div>
         </div>
       </li>

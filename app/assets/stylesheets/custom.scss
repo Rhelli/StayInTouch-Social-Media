@@ -616,6 +616,7 @@ form {
         display: flex;
         flex-flow: row nowrap;
         width: auto;
+        justify-self: end;
         font: 400 16px/16px 'Roboto';
         a,
         input[type="submit"] {
@@ -666,6 +667,7 @@ form {
           flex-flow: row nowrap;
           align-items: center;
           width: 200px;
+          margin-left: auto;
           .add-friend-button {
             width: 90px !important;
 
@@ -694,7 +696,7 @@ form {
           }
         }
       }
-      .ad-btns {
+      .invited-buttons {
         margin-left: auto;
       }
     }
