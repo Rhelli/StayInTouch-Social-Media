@@ -14,71 +14,9 @@
         </div>
       </div>
     </li>
-    <% @all_friends.each do |user| %>
-      <li>
-        <div class="users-list-card">
-          <div>
-            <%= gravatar_for(user) %>
-            <h4>Name: <%= user.name %></h4>
-          </div>
-          <div class="profile-link">
-            <%= link_to 'See Profile',  user_path(user) %>
-          </div>
-          <div class="user-index-buttons">
-            <%= user_index_buttons(user) %>
-          </div>
-        </div>
-      </li>
-    <% end %>
-    <% @invited_requests.each do |user| %>
-      <li>
-        <div class="users-list-card">
-          <div>
-            <%= gravatar_for(user) %>
-            <h4>Name: <%= user.name %></h4>
-          </div>
-          <% if confirmed_friend(user) %>
-            <div class="profile-link">
-              <%= link_to 'See Profile',  user_path(user) %>
-            </div>
-          <% end %>
-          <div class="user-index-buttons invited-buttons">
-            <%= invited_requests_buttons(user) %>
-          </div>
-        </div>
-      </li>
-    <% end %>
-    <% @pending_requests.each do |user| %>
-      <li>
-        <div class="users-list-card">
-          <div>
-            <%= gravatar_for(user) %>
-            <h4>Name: <%= user.name %></h4>
-          </div>
-          <div class="profile-link">
-            <%= link_to 'See Profile',  user_path(user) %>
-          </div>
-          <div class="user-index-buttons">
-            <%= user_index_buttons(user) %>
-          </div>
-        </div>
-      </li>
-    <% end %>
-    <% @non_friends.each do |user| %>
-      <li>
-        <div class="users-list-card">
-          <div>
-            <%= gravatar_for(user) %>
-            <h4>Name: <%= user.name %></h4>
-          </div>
-          <div class="profile-link">
-            <%= link_to 'See Profile',  user_path(user) %>
-          </div>
-          <div class="user-index-buttons">
-            <%= user_index_buttons(user) %>
-          </div>
-        </div>
-      </li>
-    <% end %>
+    <%= render 'users/all_friends'%>
+    <%= render 'users/invited_requests' %>
+    <%= render 'users/pending_requests' %>
+    <%= render 'users/non_friends'%>
   </ul>
 </section>
