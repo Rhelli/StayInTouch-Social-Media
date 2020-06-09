@@ -30,6 +30,7 @@ module UserHelper
 
   def user_index_buttons(user)
     if current_user == user
+      return
     elsif confirmed_friend(user)
       link_to "Friends", user_path(user), class: 'confirmed-friend-button'
     elsif request_pending_for(user)
