@@ -21,23 +21,4 @@ module ApplicationHelper
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?d=identicon&s=400"
     image_tag(gravatar_url, alt: user.name.titleize, class: 'gravatar')
   end
-
-  def request_pending_for(user)
-    f = Friendship.find_by(user_id: current_user.id, friend_id: user.id, confirmed: false)
-    user != current_user && f
-  end
-
-  def request_pending_from(user)
-    f = Friendship.find_by(user_id: user.id, friend_id: current_user.id, confirmed: false)
-    user != current_user && f
-  end
-
-  def confirmed_friend(user)
-    f = Friendship.find_by(user_id: current_user.id, friend_id: user.id, confirmed: true)
-    user != current_user && f
-  end
-
-  def any_pending_requests
-    User.invited_requests(current_user).count > 0
-  end
 end

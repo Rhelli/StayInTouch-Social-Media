@@ -1,0 +1,3 @@
+<% @pending_requests.each do |user| %>
+  <%= render partial: 'users/users_list_card', locals: { user: user } %>
+<% end %>

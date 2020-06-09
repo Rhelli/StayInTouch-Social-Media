@@ -14,71 +14,9 @@
         </div>
       </div>
     </li>
-    <% @all_friends.each do |user| %>
-      <li>
-        <div class="users-list-card">
-          <div>
-            <%= gravatar_for(user) %>
-            <h4>Name: <%= user.name %></h4>
-          </div>
-          <div class="profile-link">
-            <%= link_to 'See Profile',  user_path(user) %>
-          </div>
-          <div class="user-index-buttons">
-            <% if confirmed_friend(user) %>
-              <%= link_to "Friends", user_path(user), class: 'confirmed-friend-button' %>
-            <% elsif request_pending_for(user) %>
-              <%= link_to "Request Pending", user_path(user), class: 'pending-request-button' %>
-            <% else %>
-              <%= button_to 'Add Friend', { :controller => 'friendships', action: 'create', :user_id => user.id }, :method => :post, 'data-turbolinks-scroll': false, class: 'add-friend-button' %>
-            <% end %>
-          </div>
-        </div>
-      </li>
-    <% end %>
-    <% @pending_requests.each do |user| %>
-      <li>
-        <div class="users-list-card">
-          <div>
-            <%= gravatar_for(user) %>
-            <h4>Name: <%= user.name %></h4>
-          </div>
-          <div class="profile-link">
-            <%= link_to 'See Profile',  user_path(user) %>
-          </div>
-          <div class="user-index-buttons">
-            <% if confirmed_friend(user) %>
-              <%= link_to "Friends", user_path(user), class: 'confirmed-friend-button' %>
-            <% elsif request_pending_for(user) %>
-              <%= link_to "Request Pending", user_path(user), class: 'pending-request-button' %>
-            <% else %>
-              <%= button_to 'Add Friend', { :controller => 'friendships', action: 'create', :user_id => user.id }, :method => :post, 'data-turbolinks-scroll': false, class: 'add-friend-button' %>
-            <% end %>
-          </div>
-        </div>
-      </li>
-    <% end %>
-    <% @non_friends.each do |user| %>
-      <li>
-        <div class="users-list-card">
-          <div>
-            <%= gravatar_for(user) %>
-            <h4>Name: <%= user.name %></h4>
-          </div>
-          <div class="profile-link">
-            <%= link_to 'See Profile',  user_path(user) %>
-          </div>
-          <div class="user-index-buttons">
-            <% if confirmed_friend(user) %>
-              <%= link_to "Friends", user_path(user), class: 'confirmed-friend-button' %>
-            <% elsif request_pending_for(user) %>
-              <%= link_to "Request Pending", user_path(user), class: 'pending-request-button' %>
-            <% else %>
-              <%= button_to 'Add Friend', { :controller => 'friendships', action: 'create', :user_id => user.id }, :method => :post, 'data-turbolinks-scroll': false, class: 'add-friend-button' %>
-            <% end %>
-          </div>
-        </div>
-      </li>
-    <% end %>
+    <%= render 'users/all_friends'%>
+    <%= render 'users/invited_requests' %>
+    <%= render 'users/pending_requests' %>
+    <%= render 'users/non_friends'%>
   </ul>
 </section>

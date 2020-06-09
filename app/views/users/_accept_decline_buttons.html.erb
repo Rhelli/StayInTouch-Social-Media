@@ -1,0 +1,4 @@
+<div class="user-show-ad-btns">
+  <%= button_to 'Accept', { :controller => 'friendships', action: 'update', :user_id => user.id, :id => user.friendships, response: true }, :method => :patch, class: 'add-friend-button accept-button' %>
+  <%= button_to 'Decline', { :controller => 'friendships', action: 'update', :user_id => user.id, :id => user.friendships, response: false }, :method => :delete, data: { confirm: 'Are you sure?' }, class: 'add-friend-button decline-button' %>
+</div>

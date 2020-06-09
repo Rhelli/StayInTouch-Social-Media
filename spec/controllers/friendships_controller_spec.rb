@@ -31,11 +31,6 @@ RSpec.describe FriendshipsController, type: :controller do
       user1.friendships.build(friend_id: user5.id)
       expect(User.pending_requests(user1).count).to eq(2)
     end
-
-    it 'displays an error if incorrect params are entered' do
-      post :create, params: { friend_id: user5 }
-      expect(flash[:danger]).to be_present
-    end
   end
 
   context '#update' do
