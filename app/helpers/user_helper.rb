@@ -30,13 +30,15 @@ module UserHelper
 
   def user_index_buttons(user)
     if current_user == user
-      return
     elsif confirmed_friend(user)
-      link_to "Friends", user_path(user), class: 'confirmed-friend-button'
+      link_to 'Friends', user_path(user), class: 'confirmed-friend-button'
     elsif request_pending_for(user)
-      link_to "Request Pending", user_path(user), class: 'pending-request-button'
+      link_to 'Request Pending', user_path(user), class: 'pending-request-button'
     else
-      button_to 'Add Friend', { :controller => 'friendships', action: 'create', :user_id => user.id }, :method => :post, 'data-turbolinks-scroll': false, class: 'add-friend-button'
+      button_to 'Add Friend', {
+        controller: 'friendships',
+        action: 'create', user_id: user.id
+      }, method: :post, class: 'add-friend-button'
     end
   end
 
