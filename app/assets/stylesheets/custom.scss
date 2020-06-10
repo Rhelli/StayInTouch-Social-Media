@@ -887,7 +887,7 @@ form {
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.08);
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 
     .post-content {
       font: 400 20px/28px 'Montserrat', sans-serif;
@@ -899,7 +899,7 @@ form {
     display: flex;
     align-items: center;
     border-radius: 20px;
-    padding: 10px 20px;
+    padding: 10px 20px 10px 90px;
     background-color: rgba(0, 0, 0, 0.08);
     border: 1px solid #BDC3C7;
   }
@@ -909,6 +909,7 @@ form {
     width: auto;
     display: flex;
     align-items: center;
+    position: relative;
 
     .post-author {
       margin-left: 10px;
@@ -937,8 +938,10 @@ form {
     }
 
     img {
-      height: 35px;
-      width: 35px;
+      position: absolute;
+      left: -70px;
+      height: 60px;
+      width: 60px;
       border-radius: 50%;
       border: 2px solid #F2F3F4;
       box-shadow: 0 0 10px 0 #808080;
@@ -964,9 +967,8 @@ form {
   }
 
   .post-comments-section {
-    margin: 5px;
+    margin: 20px auto;
     width: 90%;
-    margin-left: 10%;
 
     .post-comments {
       position: relative;
