@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&display=swap");
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 
 // KEYFRAMES -----------------------------------------------------------//
@@ -823,6 +823,20 @@ form {
 }
 
 // TIMELINE ---------------------------------------------------------//
+.timeline-container {
+  display: flex;
+  justify-content: center;
+  height: auto;
+  width: 90%;
+  background-color: #F2F3F4;
+  background-image: image-url('cream-pixels');
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #F0F3F4;
+  -webkit-box-shadow: inset 0px 0px 24px 4px #D5D8DC;
+  -moz-box-shadow: inset 0px 0px 24px 4px #D5D8DC;
+  box-shadow: inset 0px 0px 24px 4px #D5D8DC;
+}
 .timeline {
   width: 100%;
   margin: 16px 0;
@@ -831,7 +845,25 @@ form {
   align-items: center;
 
   h3 {
+    font: 700 48px/48px 'Montserrat', sans-serif;
+    letter-spacing: 1.5px;
+    text-shadow: #000 4px 4px 0px;
+    color: #fafbfd;
     margin: 8px 0;
+    background-color: #0000CC;
+    background-image: image-url('dark-dot');
+    padding: 16px 20px;
+    border-radius: 20px 20px 4px 20px;
+    -webkit-box-shadow: inset 0px -1px 6px -1px #000;
+    -moz-box-shadow: inset 0px -1px 6px -1px #000;
+    box-shadow: inset 0px -1px 6px -1px #000;
+  }
+
+  .post-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
   }
 
   .posts {
@@ -843,35 +875,92 @@ form {
     margin: 16px 0;
     display: flex;
     flex-direction: column;
+    border-radius: 40px 40px 0 40px;
+    background-color: #D6DBDF;
+    border: 1px solid #BDC3C7;
+    background-image: image-url('cream-pixels');
+    padding: 40px;
+  }
+
+  .post-content-container {
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    margin-bottom: 15px;
+
+    .post-content {
+      font: 400 20px/28px 'Montserrat', sans-serif;
+      padding: 4px 0;
+    }
+  }
+
+  .post-info-container {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.08);
+    border: 1px solid #BDC3C7;
   }
 
   .post-attribution {
     float: left;
+    width: auto;
+    display: flex;
+    align-items: center;
 
     .post-author {
-      margin: 0 0 8px 0;
-      color: $primary-color-dark;
+      margin-left: 10px;
+      margin-right: 10px;
+      color: #fafbfd;
+      background-color: #0000CC;
+      border-radius: 4px;
+      padding: 4px 8px;
       text-transform: capitalize;
+      font: 500 20px/20px 'Roboto', sans-serif;
+      transition-duration: 0.2s;
+      &:hover {
+        color: #66CCFF;
+        transition-duration: 0.2s;
+      }
     }
+
+    .self-author {
+      background-color: #101010;
+      color: #fafbfd;
+      transition-duration: 0.2s;
+      &:hover {
+        color: #CC00CC;
+        transition-duration: 0.2s;
+      }
+    }
+
+    img {
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+      border: 2px solid #F2F3F4;
+      box-shadow: 0 0 10px 0 #808080;
+      margin-right: 10px;
+    }
+  }
+
+  .post-date {
+    font-size: 12px;
+    margin-top: 5px;
   }
 
   .post-liking {
     float: right;
+    margin-left: auto;
 
-    a{
-      color: $primary-color-dark;
+    a {
+      color: red;
       font-weight: bold;
       font-size: 0.9em;
       margin: 0 4px;
     }
-    .post-date {
-      font-size: 0.6em;
-    }
-  }
-
-  .post-content {
-    font-size: 1.1em;
-    padding: 4px 0;
   }
 
   .post-comments-section {
@@ -1237,6 +1326,6 @@ footer {
   .timeline,
   .users-section,
   .user-section {
-    width: 50%;
+    width: 70%;
   }
 }

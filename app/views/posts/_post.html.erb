@@ -1,30 +1,41 @@
-<li class="post">
-  <div>
-    <div class='post-attribution' >
-      <%= link_to post.user.name, user_path(post.user), class: 'post-author' %>
+<div class="post-container">
+  <li class="post">
+    <div class="post-content-container">
+      <p class="post-content">
+        <%= post.content %>
+      </p>
     </div>
-    <div class='post-liking'>
-      <span class='post-date'> <%= post.created_at.strftime("%Y/%m/%d") %> </span>
-      <%= like_or_dislike_btn(post) %>
-    </div>
-  </div>
-  <p class="post-content">
-    <%= post.content %>
-  </p>
-
-  <div class='post-comments-section'>
-    <% post.comments.each do |comment| %>
-      <div class="post-comments">
-        <p>
-          <b><%= comment.user.name %>:</b> <%= comment.content %>
-        </p>
-        <span> <%= comment.created_at.strftime("%Y/%m/%d") %> </span>
+    <div class="post-info-container">
+      <div class='post-attribution' >
+        <%= gravatar_for(post.user) %>
+        <% if current_user == post.user %>
+          <p>Posted by:<%= link_to 'You', user_path(post.user), class: 'post-author self-author' %></p>
+        <% else %>
+          <p>Posted by:<%= link_to post.user.name, user_path(post.user), class: 'post-author' %></p>
+        <% end %>
       </div>
-    <% end %>
+      <div class='post-date'>
+        <%= time_ago_in_words(post.created_at) %> ago. 
+      </div>
+      <div class='post-liking'>
+        <%= like_or_dislike_btn(post) %>
+      </div>
+    </div>
 
-    <%= form_for(post.comments.new, url: post_comments_path(post)) do |form| %>
-      <%= form.text_field :content, id: :comment_content, class: 'form-control', placeholder: 'Add new Comment' %>
-      <%= form.submit 'Comment', class: 'btn btn-secondary' %>
-    <% end %>
-  </div>
-</li>
+    <div class='post-comments-section'>
+      <% post.comments.each do |comment| %>
+        <div class="post-comments">
+          <p>
+            <b><%= comment.user.name %>:</b> <%= comment.content %>
+          </p>
+          <span> <%= comment.created_at.strftime("%Y/%m/%d") %> </span>
+        </div>
+      <% end %>
+
+      <%= form_for(post.comments.new, url: post_comments_path(post)) do |form| %>
+        <%= form.text_field :content, id: :comment_content, class: 'form-control', placeholder: 'Add new Comment' %>
+        <%= form.submit 'Comment', class: 'btn btn-secondary' %>
+      <% end %>
+    </div>
+  </li>
+</div>
