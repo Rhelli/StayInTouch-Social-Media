@@ -823,6 +823,75 @@ form {
 }
 
 // TIMELINE ---------------------------------------------------------//
+.new-post-container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 400px;
+  border-radius: 40px 40px 40px 2px;
+  margin: 20px 0 40px 0;
+  padding: 20px;
+  background-color: #A6ACAF;
+  border: 2px solid #909090;
+  border-top: 2px solid #909191;
+  background-image: image-url('diagonal-striped-brick');
+  box-shadow: 0 2px 12px 0px #303030;
+
+  h3 {
+    font: 700 36px/36px 'Montserrat', sans-serif;
+    letter-spacing: 1.5px;
+    text-shadow: #000 4px 4px 0px;
+    color: #fafbfd;
+    margin: 8px 0;
+    background-color: #0000CC;
+    background-image: image-url('dark-dot');
+    padding: 16px 20px;
+    border-radius: 20px 20px 4px 20px;
+    -webkit-box-shadow: inset 0px -1px 6px -1px #000;
+    -moz-box-shadow: inset 0px -1px 6px -1px #000;
+    box-shadow: inset 0px -1px 6px -1px #000;
+  }
+
+  form {
+    input[type="text"] {
+      background-color: rgba(2, 2, 89, 0.1);
+      box-shadow: inset 0 0 4px -4px #2020D2;
+      transition-duration: 0.2s;
+      min-height: 60px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+      text-align: center;
+      font: 400 18px/22px 'Roboto', sans-serif;
+      &::placeholder {
+        color: #606060;
+        font: 400 18px/22px 'Roboto', sans-serif;
+      }
+      &:focus {
+        box-shadow: inset 0 0 12px -4px #2020D2;
+        transition-duration: 0.3s;
+      }
+      .form-control {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .btn {
+      background-color: #8BC34A;
+      text-shadow: #000 0px 0px 2px;
+      transition-duration: 0.2s;
+      border: 1px solid #7CB342;
+      box-shadow: 0 0 6px 0 #1B5E20;
+      &:hover {
+        border: 1px solid #8BC34A;
+        transition-duration: 0.3s;
+        box-shadow: 0 0 1px 0 #1B5E20;
+      }
+    }
+  }
+}
 .timeline-container {
   display: flex;
   justify-content: center;
@@ -954,8 +1023,13 @@ form {
     margin-top: 5px;
   }
 
+  .post-like-counter {
+    font: 400 14px/14px 'Roboto', sans-serif;
+    color: #2020D2;
+    margin: 0 10px 0 auto;
+  }
+
   .post-liking {
-    margin-left: auto;
 
     a {
       display: flex;
@@ -1008,22 +1082,68 @@ form {
     margin: 20px auto;
     width: 90%;
 
-    .post-comments {
-      position: relative;
+    .post-comment-info {
       display: flex;
-      border-bottom: 1px solid $divider-color;
-      border-radius: 3px;
-      margin-bottom: 2px;
-      padding: 10px;
-
-      p {
-        font-size: .8em;
-        width: 90%;
+      align-items: center;
+      flex-flow: row nowrap;
+      .comment-date {
+        margin: 0 auto 0 5px;
+        font: 400 14px/14px 'Roboto', sans-serif;
       }
-      span {
-        position: absolute;
-        right: 3px;
-        font-size: 0.6em;
+
+      .self-comment,
+      .friend-comment {
+        padding: 3px 4px;
+        color: #fafbfd;
+        border-radius: 4px;
+      }
+
+      .self-comment {
+        background-color: #101010;
+      }
+
+      .friend-comment {
+        background-color: #1F00CC;
+      }
+    }
+
+    .post-comment-content {
+      padding-bottom: 10px;
+      margin: 5px 0 15px 0;
+      border-bottom: 2px solid #BFBFF2;
+
+    }
+  }
+
+  .comment-form {
+    input[type="text"] {
+      background-color: rgba(2, 2, 89, 0.1);
+      box-shadow: inset 0 0 4px -4px #2020D2;
+      transition-duration: 0.2s;
+      min-height: 40px;
+      width: 100%;
+      height: auto;
+      &:focus {
+        box-shadow: inset 0 0 12px -4px #2020D2;
+        transition-duration: 0.3s;
+      }
+      .form-control {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    
+    .btn {
+      margin: 10px auto 0 auto;
+      background-color: #8BC34A;
+      text-shadow: #000 0px 0px 2px;
+      transition-duration: 0.2s;
+      border: 1px solid #7CB342;
+      box-shadow: 0 0 4px 0 #1B5E20;
+      &:hover {
+        border: 1px solid #7CB342;
+        transition-duration: 0.3s;
+        box-shadow: 0 0 1px 0 #1B5E20;
       }
     }
   }

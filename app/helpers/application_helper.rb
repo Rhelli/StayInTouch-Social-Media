@@ -40,4 +40,19 @@ module ApplicationHelper
   def any_pending_requests
     User.invited_requests(current_user).count > 0
   end
+
+  def new_post_title_sampler
+    [
+      "What's On Your Mind?",
+      "What's On Your Mind?",
+      "What's On Your Mind?",
+      "What's New For You?",
+      'Tell Us About Your Day.',
+      "What's Up?",
+      "What's Up?",
+      "What's Up?",
+      "What's Been Going On?",
+      "What's The Latest Gossip?"
+    ].sample
+  end
 end

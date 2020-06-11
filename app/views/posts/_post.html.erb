@@ -17,6 +17,9 @@
       <div class='post-date'>
         <%= time_ago_in_words(post.created_at) %> ago. 
       </div>
+      <div class="post-like-counter">
+        <p><%= post.likes.count %> <%= 'like'.pluralize(post.likes.count) %></p>
+      </div>
       <div class='post-liking'>
         <%= like_or_dislike_btn(post) %>
       </div>
@@ -24,18 +27,24 @@
 
     <div class='post-comments-section'>
       <% post.comments.each do |comment| %>
-        <div class="post-comments">
-          <p>
-            <b><%= comment.user.name %>:</b> <%= comment.content %>
-          </p>
-          <span> <%= comment.created_at.strftime("%Y/%m/%d") %> </span>
+        <div class="post-comment-info">
+          <% if current_user == comment.user %>
+            <p class="commenter self-comment"><b>You</p>
+          <% else %>
+            <p class="commenter friend-comment"><b><%= comment.user.name %></p>
+          <% end %>
+          <span class="comment-date"><%= time_ago_in_words(comment.created_at) %> ago.</span>
+        </div>
+        <div class="post-comment-content">
+          <p class="comment"></b> <%= comment.content %></p>
         </div>
       <% end %>
-
-      <%= form_for(post.comments.new, url: post_comments_path(post)) do |form| %>
-        <%= form.text_field :content, id: :comment_content, class: 'form-control', placeholder: 'Add new Comment' %>
-        <%= form.submit 'Comment', class: 'btn btn-secondary' %>
-      <% end %>
+      <div class="comment-form">
+        <%= form_for(post.comments.new, url: post_comments_path(post)) do |form| %>
+          <%= form.text_field :content, id: :comment_content, class: 'form-control', placeholder: 'Leave a comment...' %>
+          <%= form.submit 'Comment', class: 'btn btn-secondary' %>
+        <% end %>
+      </div>
     </div>
   </li>
 </div>
