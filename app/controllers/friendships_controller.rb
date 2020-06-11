@@ -14,9 +14,9 @@ class FriendshipsController < ApplicationController
   def create
     @friendship = current_user.friendships.build(friend_id: params[:user_id])
     if @friendship.save
-      flash[:success] = 'Friend request sent.'
+      flash[:alert] = 'Friend request sent.'
     else
-      flash[:danger] = 'An error has occurred, please try again!'
+      flash[:alert] = 'An error has occurred, please try again!'
     end
     redirect_back(fallback_location: root_path)
   end
@@ -28,10 +28,10 @@ class FriendshipsController < ApplicationController
     if request_params == 'true'
       @friendship.accepted
       current_user.friendships.create(friend_id: params[:user_id], confirmed: true)
-      flash[:info] = 'Request accepted.'
+      flash[:notice] = 'Request accepted.'
     else
       @friendship.destroy
-      flash[:info] = 'Request declined.'
+      flash[:alert] = 'Request declined.'
     end
     redirect_back(fallback_location: root_path)
   end

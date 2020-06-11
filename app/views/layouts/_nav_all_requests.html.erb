@@ -1,5 +1,5 @@
 <ul>
-<h3>Pending Requests</h3>
+<h3><%= User.invited_requests(current_user).count %> New Friend <%= 'Request'.pluralize(User.invited_requests(current_user).count) %></h3>
   <% User.invited_requests(current_user).each do |u| %>
     <li>
       <div class="nav-non-friends-container">

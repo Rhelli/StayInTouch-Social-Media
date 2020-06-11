@@ -1,11 +1,13 @@
 <nav class="nav">
-  <%= link_to 'Stay in touch', root_path %>
+  <%= link_to root_path, class: "nav-logo" do %>
+    <%= image_tag "stayintouch" %> Stay In Touch
+  <% end %>
   <div class="menu">
-    <div class="menu-item">
+    <div class="menu-item-top">
       <%= menu_link_to 'Timeline', posts_path %>
     </div>
-    <div class="menu-item">
-      <%= menu_link_to 'All users', users_path %>
+    <div class="menu-item-top">
+      <%= menu_link_to 'All Users', users_path %>
     </div>
   </div>
   <% if !current_user.nil? %>
@@ -30,8 +32,12 @@
       <%= gravatar_for(current_user) %>
       <%= link_to "#{current_user.name}", user_path(current_user) %>
     </div>
-    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    <div class="sign-in-out">
+      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+    </div>
   <% else %>
-    <%= link_to 'Sign in', user_session_path %>
+    <div class="sign-in-out">
+      <%= link_to 'Sign In', user_session_path %>
+    </div>
   <% end %>
 </nav>

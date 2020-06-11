@@ -1,6 +1,6 @@
 <div class="friendships-main-container">
   <div class="pending-friendships-container">
-    <h2>Pending Requests</h2>
+    <h2 class="pending-title">Pending Requests</h2>
     <% if !no_requests %>
       <%= render 'layouts/invited_requests'%>
       <%= render 'layouts/pending_requests' %>
@@ -9,7 +9,7 @@
     <% end %>
   </div>
   <div class="suggested-friendships-container">
-    <h2>Suggested Friends</h2>
+    <h2 class="suggested-title">Suggested Friends</h2>
     <%= render 'layouts/suggested_friends' %>
   </div>
 </div>

@@ -87,7 +87,10 @@ GEM
     execjs (2.7.0)
     faker (2.12.0)
       i18n (>= 1.6, < 2)
-    ffi (1.13.0)
+    ffi (1.12.2)
+    font_awesome_rails (0.0.4)
+      activesupport (>= 3.1.0)
+      sass (>= 3.2.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hirb (0.7.3)
@@ -197,6 +200,12 @@ GEM
     rubocop-ast (0.0.3)
       parser (>= 2.7.0.1)
     ruby-progressbar (1.10.1)
+    ruby_dep (1.5.0)
+    sass (3.7.4)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -251,6 +260,7 @@ DEPENDENCIES
   database_cleaner-active_record
   devise
   faker
+  font_awesome_rails
   hirb
   jbuilder
   listen (>= 3.0.5)

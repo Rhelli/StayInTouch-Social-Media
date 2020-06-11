@@ -5,7 +5,7 @@ class LikesController < ApplicationController
     if @like.save
       redirect_to posts_path, notice: 'You liked a post.'
     else
-      redirect_to posts_path, alert: 'You cannot like this post.'
+      redirect_to posts_path, alert: 'You are deemed unworthy of liking functionality.'
     end
   end
 
@@ -13,9 +13,9 @@ class LikesController < ApplicationController
     like = Like.find_by(id: params[:id], user: current_user, post_id: params[:post_id])
     if like
       like.destroy
-      redirect_to posts_path, notice: 'You disliked a post.'
+      redirect_to posts_path, notice: 'You unliked a post.'
     else
-      redirect_to posts_path, alert: 'You cannot dislike post that you did not like before.'
+      redirect_to posts_path, alert: "You cannot unlike a post you don't yet like!"
     end
   end
 end
