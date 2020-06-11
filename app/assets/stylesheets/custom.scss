@@ -413,23 +413,34 @@ a {
       .add-friend-button {
         width: 90px !important;
       }
-      .accept-button {
-        background-color: #8bc34a !important;
-        border: 2px solid #689f38 !important;
-        margin-right: 15px;
-        &:hover {
-          background-color: #689f38 !important;
-          border: 2px solid #8bc34a !important;
-        }
+    .accept-button {
+      background-color: #8BC34A;
+      text-shadow: #000 0px 0px 2px;
+      transition-duration: 0.2s;
+      border: 1px solid #7CB342;
+      box-shadow: 0 0 4px 0 #202020;
+      margin-right: 15px;
+      &:hover {
+        background-color: #7CB342;
+        border: 1px solid #7CB342;
+        transition-duration: 0.3s;
+        box-shadow: 0 0 1px 0 #404040;
       }
-      .decline-button {
-        background-color: #CD6155 !important;
-        border: 2px solid #C0392B !important;
-        &:hover {
-          background-color: #C0392B !important;
-          border: 2px solid #CD6155 !important;
-        }
+    }
+
+    .decline-button {
+      background-color: #EF5350;
+      text-shadow: #000 0px 0px 2px;
+      transition-duration: 0.2s;
+      border: 1px solid #F44336;
+      box-shadow: 0 0 6px 0 #202020;
+      &:hover {
+        background-color: #F44336;
+        border: 1px solid #EF5350;
+        transition-duration: 0.3s;
+        box-shadow: 0 0 1px 0 #404040;
       }
+    }
     }
     &:last-child {
       height: 200px;
@@ -483,10 +494,13 @@ a {
     }
     .add-friend-button {
       background-color: #51A8AB;
-      border: 2px solid #31898B;
+      text-shadow: #000 0px 0px 2px;
+      transition-duration: 0.2s;
+      box-shadow: 0 0 3px 0 #404040;
       &:hover {
         background-color: #389C9F;
-        border-color: #51A8AB;;
+        transition-duration: 0.3s;
+        box-shadow: 0 0 1px 0 #606060;
       }
     }
     .edit-profile-button {
@@ -816,8 +830,10 @@ form {
   height: auto;
   border-radius: 25% 25% 10% 25%;
   h2 {
+    font-size: 32px;
     line-height: 1.2;
     padding: 0 16px;
+    margin-top: 10px;
     text-align: center;
   }
 }
@@ -833,11 +849,12 @@ form {
   border-radius: 40px 40px 40px 2px;
   margin: 20px 0 40px 0;
   padding: 20px;
-  background-color: #A6ACAF;
-  border: 2px solid #909090;
-  border-top: 2px solid #909191;
-  background-image: image-url('diagonal-striped-brick');
-  box-shadow: 0 2px 12px 0px #303030;
+  background-color: #E5E8E8;
+  border: 4px solid #F1C40F;
+  border-top: 3px solid #F4D03F;
+  border-bottom: 5px solid #F1C40F;
+  background-image: image-url('skulls');
+  box-shadow: 0 2px 12px 0px #505050;
 
   h3 {
     font: 700 36px/36px 'Montserrat', sans-serif;
@@ -864,6 +881,8 @@ form {
       height: auto;
       margin-bottom: 20px;
       text-align: center;
+      border-radius: 10px;
+      border: 1px solid rgba(150,96,223,0.2);
       font: 400 18px/22px 'Roboto', sans-serif;
       &::placeholder {
         color: #606060;
@@ -872,6 +891,7 @@ form {
       &:focus {
         box-shadow: inset 0 0 12px -4px #2020D2;
         transition-duration: 0.3s;
+        background-color: rgba(2, 2, 89, 0.2);
       }
       .form-control {
         height: 100%;
@@ -1123,7 +1143,9 @@ form {
       min-height: 40px;
       width: 100%;
       height: auto;
+      padding: 0 10px;
       &:focus {
+        background-color: rgba(2, 2, 89, 0.2);
         box-shadow: inset 0 0 12px -4px #2020D2;
         transition-duration: 0.3s;
       }
@@ -1191,14 +1213,20 @@ form {
         margin-right: 10px;
         margin-left: auto;
         a {
-          border: 2px solid #8bc34a;
           border-radius: 4px;
           padding: 12px 14px;
           background-color: #A1C383;
           color: #fafbfd;
           text-shadow: #000 0px 0px 2px;
+          font-weight: 500;
           -webkit-font-smoothing: antialiased;
-          font: 600 16px/16px 'Roboto'
+          transition-duration: 0.2s;
+          box-shadow: 0 0 3px 0 #404040;
+          &:hover {
+            background-color: #8BC34A;
+            transition-duration: 0.3s;
+            box-shadow: 0 0 1px 0 #606060;
+          }
         }
       }
       .user-index-buttons {
@@ -1217,10 +1245,13 @@ form {
         }
         .add-friend-button {
           background-color: #51A8AB;
-          border: 2px solid #31898B;
+          text-shadow: #000 0px 0px 2px;
+          transition-duration: 0.2s;
+          box-shadow: 0 0 3px 0 #404040;
           &:hover {
             background-color: #389C9F;
-            border-color: #51A8AB;;
+            transition-duration: 0.3s;
+            box-shadow: 0 0 1px 0 #606060;
           }
         }
         .edit-profile-button {
@@ -1231,7 +1262,14 @@ form {
           border-radius: 4px;
           padding: 12px 14px;
           background-color: #A1C383;
-          font: 600 16px/16px 'Roboto'
+          font: 600 16px/16px 'Roboto';
+          transition-duration: 0.2s;
+          box-shadow: 0 0 3px 0 #404040;
+          &:hover {
+            background-color: #8BC34A;
+            transition-duration: 0.3s;
+            box-shadow: 0 0 1px 0 #606060;
+          }
         }
         .pending-request-button {
           display: block;
@@ -1247,6 +1285,13 @@ form {
           font: 600 16px/16px 'Roboto';
           padding: 14px 16px;
           width: 150px !important;
+          transition-duration: 0.2s;
+          box-shadow: 0 0 3px 0 #404040;
+          &:hover {
+            background-color: #52BE80;
+            transition-duration: 0.3s;
+            box-shadow: 0 0 1px 0 #606060;
+          }
         }
       }
     }
@@ -1369,7 +1414,7 @@ form {
 // FRIENDSHIPS PAGE -----------------------------------------------------------//
 .friendships-main-container {
   width: 100%;
-  height: 100%;
+  height: 90%;
 }
 
 .pending-friendships-container,
@@ -1377,24 +1422,39 @@ form {
   width: 80%;
   height: auto;
   margin: 0 auto;
-  padding: 20px;
-  background-color: #dcedc8;
-  border: 1px solid #8bc34a;
+  padding: 20px 30px;
+  background-color: #FFCDD2;
+  border: 1px solid #F8BBD0;
+  border-radius: 25px;
+  box-shadow: inset 0 -1px 50px -4px #F8BBD0;
   .gravatar {
     height: 80px;
     width: auto;
     margin-right: 20px;
     margin-left: 20px;
-    border-radius: 15% 5%;
+    border-radius: 5% 15%;
   }
   h2 {
     padding: 14px 16px;
-    font: 700 20px/20px 'Roboto';
+    font: 700 42px/42px 'Roboto';
+    color: #fafbfd;
+    text-align: center;
   }
+
+  .pending-title {
+    text-shadow: #558B2F 2px 2px 0;
+  }
+
+  .suggested-title {
+    text-shadow: #EF9A9A 2px 2px 0;
+  }
+
   h4 {
     padding: 14px 16px;
     font: 400 16px/16px 'Roboto';
+    text-align: center;
   }
+
   .user-friendships-ad-buttons {
     width: auto;
     display: flex;
@@ -1410,20 +1470,30 @@ form {
       }
     }
     .accept-button {
-      background-color: #8bc34a;
-      border: 2px solid #689f38;
+      background-color: #8BC34A;
+      text-shadow: #000 0px 0px 2px;
+      transition-duration: 0.2s;
+      border: 1px solid #7CB342;
+      box-shadow: 0 0 4px 0 #202020;
       &:hover {
-        background-color: #689f38;
-        border: 2px solid #8bc34a;
+        background-color: #7CB342;
+        border: 1px solid #7CB342;
+        transition-duration: 0.3s;
+        box-shadow: 0 0 1px 0 #404040;
       }
     }
 
     .decline-button {
-      background-color: #CD6155;
-      border: 2px solid #C0392B;
+      background-color: #EF5350;
+      text-shadow: #000 0px 0px 2px;
+      transition-duration: 0.2s;
+      border: 1px solid #F44336;
+      box-shadow: 0 0 6px 0 #202020;
       &:hover {
-        background-color: #C0392B;
-        border: 2px solid #CD6155;
+        background-color: #F44336;
+        border: 1px solid #EF5350;
+        transition-duration: 0.3s;
+        box-shadow: 0 0 1px 0 #404040;
       }
     }
   }
@@ -1431,18 +1501,55 @@ form {
 
 .pending-friendships-container {
   background-color: #dcedc8;
-  border: 1px solid #8bc34a;
+  box-shadow: inset 0 -1px 50px -4px #C5E1A5;
+  border: 1px solid #C5E1A5;
   margin-bottom: 20px;
 }
 
 .suggested-friendships-container,
 .pending-friendships-container {
   .nav-non-friends-container {
-    height: 110px;
-    padding: 10px;
+    height: 120px;
+    padding: 20px;
     .name {
-      font: 500 24px/24px 'Roboto';
+      font: 500 26px/26px 'Roboto';
+      margin-left: 20px;
     }
+  }
+
+  .add-friend-button {
+    text-shadow: #000 0px 0px 2px;
+    transition-duration: 0.2s;
+    box-shadow: 0 0 3px 0 #202020;
+    &:hover {
+      transition-duration: 0.3s;
+      box-shadow: 0 0 1px 0 #404040;
+    }
+  }
+}
+
+.pending-friendships-container {
+  .gravatar {
+    border-right: 4px solid #9CCC65;
+    border-bottom: 4px solid #9CCC65;
+    border-left: 1px solid #DCEDC8 ;
+    border-top: 1px solid #DCEDC8 ;
+  }
+
+  .nav-non-friends-container {
+    border-bottom: 3px solid #9CCC65;
+  }
+}
+
+.suggested-friendships-container {
+  .gravatar {
+    border-right: 4px solid #EF9A9A;
+    border-bottom: 4px solid #EF9A9A;
+    border-left: 1px solid #FFCDD2;
+    border-top: 1px solid #FFCDD2;
+  }
+  .nav-non-friends-container {
+    border-bottom: 3px solid #EF9A9A;
   }
 }
 
