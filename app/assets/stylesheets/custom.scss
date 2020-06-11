@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap");
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 
 // KEYFRAMES -----------------------------------------------------------//
@@ -98,7 +98,7 @@ $majorelle-color: #0000CC;
 }
 
 body {
-  background-color: $majorelle-color;
+  background-color: #000099;
   background-image: image-url('dark-dot');
   position: relative;
   font-family: "Roboto", sans-serif;
@@ -725,7 +725,7 @@ form {
   flex-flow: column nowrap;
   background-color: #2020D2;
   color: #fafbfd;
-  border-radius: 15% 15% 5% 15%;
+  border-radius: 20% 20% 1% 20%;
   padding: 20px 10px;
   border: 2px solid #1F00CC;
   background-image: image-url('dark-dot');
@@ -899,7 +899,7 @@ form {
     display: flex;
     align-items: center;
     border-radius: 20px;
-    padding: 10px 20px 10px 90px;
+    padding: 5px 20px 5px 90px;
     background-color: rgba(0, 0, 0, 0.08);
     border: 1px solid #BDC3C7;
   }
@@ -955,14 +955,52 @@ form {
   }
 
   .post-liking {
-    float: right;
     margin-left: auto;
 
     a {
-      color: red;
-      font-weight: bold;
-      font-size: 0.9em;
+      display: flex;
+      align-items: center;
+      font: 500 16px/16px 'Roboto', sans-serif;
       margin: 0 4px;
+      background-color: rgba(2, 2, 89, 0.2);
+      background-image: inherit;
+      border: 2px solid #BFC9CA;
+      box-shadow: inset 0 0 6px -1px #CACFD2;
+      padding: 6px 10px;
+      border-radius: 10px;
+    }
+
+    .like,
+    .dislike {
+      height: 30px;
+      margin-left: 10px;
+    }
+
+    .like-link {
+      color: #C70039;
+      transition-duration: 0.2s;
+    }
+
+    .like {
+      margin-bottom: 10px;
+      color: #C70039;
+    }
+
+    .dislike-link {
+      color: #C0392B;
+      transition-duration: 0.3s;
+    }
+
+    .dislike {
+      margin-top: 5px; 
+    }
+
+    .like-link,
+    .dislike-link {
+      &:hover {
+        color: #1F00CC;
+        transition-duration: 0.3s;
+      }
     }
   }
 
