@@ -295,7 +295,7 @@ a {
   position: absolute;
   top: 18px;
   right: 12px;
-  background-color: #CC0000;
+  background-color: red;
   opacity: 0.8;
   height: 14px;
   width: 14px;
@@ -563,7 +563,8 @@ a {
   margin-top: 27px;
   overflow: hidden;
   overflow-y: auto;
-  animation: slide-in-top 0.3s cubic-bezier(0.860, 0.000, 0.070, 1.000) both;
+  animation: slide-in-top 0.3s cubic-bezier(0.860, 0.000, 0.070, 1.000) 1 both;
+  -webkit-animation: slide-in-top 0.3s cubic-bezier(0.860, 0.000, 0.070, 1.000) 1 both;
   border-left: 2px solid #000060;
   border-right: 2px solid #000060;
 }
@@ -1385,6 +1386,19 @@ form {
         color: #fafbfd;
         text-shadow: #000 0px 0px 2px;
         -webkit-font-smoothing: antialiased;
+      }
+      .add-friend-button {
+        background-color: #8BC34A;
+        text-shadow: #000 0px 0px 2px;
+        transition-duration: 0.2s;
+        border: 1px solid #7CB342;
+        box-shadow: 0 0 4px 0 #202020;
+        &:hover {
+          background-color: #7CB342;
+          border: 1px solid #7CB342;
+          transition-duration: 0.3s;
+          box-shadow: 0 0 1px 0 #404040;
+        }
       }
       .pending-request-button {
         background-color: #bdbdbd;
