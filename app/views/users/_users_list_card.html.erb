@@ -1,0 +1,14 @@
+<li>
+  <div class="users-list-card">
+    <div>
+      <%= gravatar_for(user) %>
+      <h4>Name: <%= user.name %></h4>
+    </div>
+    <div class="profile-link">
+      <%= link_to 'See Profile',  user_path(user) %>
+    </div>
+    <div class="user-index-buttons">
+      <%= user_index_buttons(user) %>
+    </div>
+  </div>
+</li>

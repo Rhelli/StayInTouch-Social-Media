@@ -13,8 +13,9 @@ class FriendshipsController < ApplicationController
 
   def create
     @friendship = current_user.friendships.build(friend_id: params[:user_id])
+    @friendship.save
     if @friendship.save
-      flash[:alert] = 'Friend request sent.'
+      flash[:notice] = 'Friend request sent.'
     else
       flash[:alert] = 'An error has occurred, please try again!'
     end

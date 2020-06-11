@@ -1177,6 +1177,8 @@ form {
   margin: 10px;
 
   .users-list li {
+    display: flex;
+    align-items: center;
     margin-bottom: 16px;
     text-transform: capitalize;
     font-size: 1.2em;
@@ -1184,7 +1186,7 @@ form {
     background-color: #DFDFF9;
     background-image: image-url('corrugation');
     border-radius: 10px;
-    padding: 40px 30px;
+    padding: 10px 30px;
     height: 150px;
     .users-list-card {
       display: flex;
@@ -1192,8 +1194,14 @@ form {
       align-items: center;
       align-content: center;
       flex-flow: row nowrap;
-      height: 60px;
+      height: auto;
+      width: 100%;
+
       div:first-child {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
         .gravatar {
           height: 100px;
           width: auto;
@@ -1202,7 +1210,6 @@ form {
         h4 {
           display: inline-block;
           position: relative;
-          bottom: 30px;
           margin-left: 20px;
           font: 300 20px/20px 'Roboto', sans-serif;
         }
@@ -1230,7 +1237,10 @@ form {
         }
       }
       .user-index-buttons {
-        width: 150px;
+        display: flex;
+        flex-flow: row nowrap;
+        width: auto;
+        justify-self: end;
         font: 400 16px/16px 'Roboto';
         a,
         input[type="submit"] {
@@ -1293,6 +1303,42 @@ form {
             box-shadow: 0 0 1px 0 #606060;
           }
         }
+        .user-show-ad-btns {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          width: 200px;
+          margin-left: auto;
+          .add-friend-button {
+            width: 90px !important;
+
+            form {
+              width: 100px;
+            }
+          }
+          .accept-button {
+            position: relative;
+            right: 25px;
+            background-color: #8bc34a !important;
+            border: 2px solid #689f38 !important;
+            margin-right: 15px;
+            &:hover {
+              background-color: #689f38 !important;
+              border: 2px solid #8bc34a !important;
+            }
+          }
+          .decline-button {
+            background-color: #CD6155 !important;
+            border: 2px solid #C0392B !important;
+            &:hover {
+              background-color: #C0392B !important;
+              border: 2px solid #CD6155 !important;
+            }
+          }
+        }
+      }
+      .invited-buttons {
+        margin-left: auto;
       }
     }
   }
