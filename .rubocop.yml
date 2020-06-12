@@ -7,11 +7,13 @@ AllCops:
     - "Rakefile"
     - "README.md"
     - "node_modules/**/*"
+    - "spec/support/*"
+  NewCops: enable
 
   DisplayCopNames: true
 
 Layout/LineLength:
-  Max: 120
+  Max: 160
 Metrics/MethodLength:
   Include:
     - "app/controllers/*"
@@ -48,3 +50,8 @@ Layout/ExtraSpacing:
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
+
+Style/NumericPredicate:
+  Enabled: false
+Style/BlockComments:
+  Enabled: false

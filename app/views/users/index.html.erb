@@ -1,12 +1,22 @@
 <section class="users-section">
   <ul class="users-list">
-    <% @users.each do |user| %>
-      <li>
-        Name: <%= user.name %>
-        <span class="profile-link">
-          <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
-        </span>
-      </li>
-    <% end %>
+    <li>
+      <div class="users-list-card">
+        <div>
+          <%= gravatar_for(current_user) %>
+          <h4>Name: <%= current_user.name %></h4>
+        </div>
+        <div class="profile-link">
+          <%= link_to 'My Profile',  user_path(current_user) %>
+        </div>
+        <div class="user-index-buttons">
+          <%= link_to "Edit my profile", user_path(current_user), class: 'edit-profile-button' %>
+        </div>
+      </div>
+    </li>
+    <%= render 'users/all_friends'%>
+    <%= render 'users/invited_requests' %>
+    <%= render 'users/pending_requests' %>
+    <%= render 'users/non_friends'%>
   </ul>
 </section>

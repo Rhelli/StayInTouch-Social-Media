@@ -3,7 +3,8 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
-    timeline_posts
+    ids = User.confirmed_friends(current_user).pluck(:id) << current_user.id
+    @timeline_posts = Post.where(user_id: ids).order(created_at: :desc)
   end
 
   def create

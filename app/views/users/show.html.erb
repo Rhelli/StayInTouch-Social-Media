@@ -1,5 +1,15 @@
 <section class="user-section">
-  <h2><%= "Name: #{@user.name}" %></h2>
+  <div class="user-show-name-invite">
+    <div>
+      <%= gravatar_for(@user) %>
+    </div>
+    <div class="user-name-btns">
+      <h2><%= "Name: #{@user.name}" %></h2>
+      <div class="user-friend-buttons">
+        <%= user_index_buttons(@user) %>
+      </div>
+    </div>
+  </div>
   <article class="timeline">
     <h3>Recent posts:</h3>
     <ul class="posts">

@@ -1,0 +1,12 @@
+<li>
+  <div class="users-list-card">
+    <div>
+      <%= gravatar_for(user) %>
+      <h4>Name: <%= user.name %></h4>
+    </div>
+    <%= invited_requests_profile_link(user) %>
+    <div class="user-index-buttons invited-buttons index-invited-buttons">
+      <%= invited_requests_buttons(user) %>
+    </div>
+  </div>
+</li>

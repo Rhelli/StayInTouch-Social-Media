@@ -1,0 +1,3 @@
+<% @invited_requests.each do |user| %>
+  <%= render partial: 'users/invited_users_list_card', locals: { user: user } %>
+<% end %>

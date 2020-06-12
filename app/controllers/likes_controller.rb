@@ -3,19 +3,21 @@ class LikesController < ApplicationController
     @like = current_user.likes.new(post_id: params[:post_id])
 
     if @like.save
-      redirect_to posts_path, notice: 'You liked a post.'
+      flash[:notice] = 'You liked a post.'
     else
-      redirect_to posts_path, alert: 'You cannot like this post.'
+      flash[:alert] = 'You are deemed unworthy of liking.'
     end
+    redirect_back(fallback_location: root_path)
   end
 
   def destroy
     like = Like.find_by(id: params[:id], user: current_user, post_id: params[:post_id])
     if like
       like.destroy
-      redirect_to posts_path, notice: 'You disliked a post.'
+      flash[:notice] = 'You unliked a post.'
     else
-      redirect_to posts_path, alert: 'You cannot dislike post that you did not like before.'
+      flash[:alert] = 'You cannot unlike this post.'
     end
+    redirect_back(fallback_location: root_path)
   end
 end
