@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="previews/preview-image.png" alt="Stay In Touch's Home Page" width="800" height="464">
+  <img src="previews/preview-image.png" alt="Stay In Touch's Home Page" width="900" height="auto">
 
   <h1 align="center"> ☝🏽 Stay In Touch</h1>
 
