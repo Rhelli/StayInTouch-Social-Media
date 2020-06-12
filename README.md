@@ -1,20 +1,14 @@
-<head>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-</head>
-
+<div class="button-group minor-group">
 <a class="github-button" href="https://github.com/Rhelli" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Follow @Rhelli on GitHub">Follow @Rhelli</a>
 
 <a class="github-button" href="https://github.com/Rhelli/StayInTouch-Social-Media/subscription" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch Rhelli/StayInTouch-Social-Media on GitHub">Watch</a>
 
 <a class="github-button" href="https://github.com/Rhelli/StayInTouch-Social-Media" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star Rhelli/StayInTouch-Social-Media on GitHub">Star</a>
 
-<a class="github-button" href="https://github.com/Rhelli/StayInTouch-Social-Media/issues" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-issue-opened" data-size="large" data-show-count="true" aria-label="Issue Rhelli/StayInTouch-Social-Media on GitHub">Issue</a>
+<a class="github-button" href="https://github.com/Rhelli/StayInTouch-Social-Media/issues" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-issue-opened" data-size="large" data-show-count="true" aria-label="Issue Rhelli/StayInTouch-Social-Media on GitHub">Issue<a>
 
 <a class="github-button" href="https://github.com/Rhelli/StayInTouch-Social-Media/fork" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork Rhelli/StayInTouch-Social-Media on GitHub">Fork</a>
+</div>
 
 <p align="center">
   <img src="previews/preview-image.png" alt="Stay In Touch's Home Page" width="900" height="auto">
@@ -239,3 +233,10 @@ Give a ⭐️ if you like this project!
 
 ## ⚖️ Licensing
 This project is [MIT](https://github.com/Rhelli/StayInTouch-Social-Media/LICENSE.txt) licensed.
+
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
