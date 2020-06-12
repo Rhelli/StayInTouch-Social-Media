@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="assets/img/splash-screen.png" alt="Splash Screen" width="800" height="464">
+  <img src="previews/preview-image.png" alt="Stay In Touch's Home Page" width="800" height="464">
 
   <h1 align="center"> ☝🏽 Stay In Touch</h1>
 
@@ -137,56 +137,25 @@ Alternatively if you'd like to confirm the entire project is passing testing:
 
 *******
 
-## 🥂 Contributions, Issues and Forking
+## 🚦 Contributions, Issues and Forking
 
 Contributions, issues and feature requests are more than welcome! 
 
-If you have any problems running or setting up Gitshoes, please submit it as a bug on the [issues page.](https://github.com/Rhelli/Shoes-Github-API/issues) right away!
+If you have any problems running or setting up Gitshoes, please submit it as a bug on the [issues page.](https://github.com/Rhelli/StayInTouch-Social-Media/issues) right away!
 
 If you want to make your own changes, modifications or improvements, go ahead and Fork it!
-1. Fork it (https://github.com/queeksm/Tic-Tac-Toe/fork)
+1. [Fork it](https://github.com/Rhelli/StayInTouch-Social-Media/fork)
 2. Create your working branch (git checkout -b [choose-a-name])
 3. Commit your changes (git commit -am 'what this commit will fix/add/improve')
 4. Push to the branch (git push origin [chosen-name])
 5. Create a new Pull Request
-
-## 🔮 Final Thoughts & Futures
-Gitshoes is in it's infancy, and as such, it is lacking in the full suite of features that are first apparent to the user. However, as development progresses, I'd like to add the obvious features (such as making all the buttons fully functional) as well as a few others such as:
-
-  **Login:**
-  - Transfer OAuth to OAuth2 in complicance with Github's authentication standards
-  - Allow for entirely in-app login
-  - Login screen opens first before main window
-  - Implementation of a 'Remember Me' feature to prevent having to log in every time the app is opened
-
-  **Search:**
-  - Simple radio/switch control for Google or Github Search
-
- **Functionality:**
-  - Create Pull Requests
-  - Create Issue
-  - Profile Acitibity Statistics & Graphs
-  
-  **Thematic:**
-  - Simple radio/switch control for day/night mode
-
 
 ## 👨🏽‍💻 Creator
 
 Rory Hellier - [Github](https://github.com/Rhelli)
 
 ## 🖐🏼 Show Your Support!
-
 Give a ⭐️ if you like this project!
 
-## 🎩 Acknowledgements
- - Shoes3 for providing the GUI library
- - Github for their API
-
-## 📚 Noteable Resources
-  - [Shoes3 Manual](http://shoesrb.com/manual/Hello.html) - Starting with Shoes
-  - [Shoes3 Wiki](https://github.com/shoes/shoes3/wiki) - Advanced Use of Shoes
-  - [OAuth-Ruby-Quickstart](https://github.com/githubOAuth-Ruby-Quickstart) - An excellent guide to getting simple OAuth authentication started using Sinatra, rest-client and Octokit
-
 ## ⚖️ Licensing
-This project is [MIT](https://github.com/queeksm/Tic-Tac-Toe/LICENSE.txt) licensed.
+This project is [MIT](https://github.com/Rhelli/StayInTouch-Social-Media/LICENSE.txt) licensed.
