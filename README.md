@@ -58,29 +58,28 @@ This enforced some ground rules as to how we should generated our models:
 Subsequently, an additional medley of controller and helper functions would enable detection of friend request states and existence, enable creation and destruction of requests and allow for updating on friend request acceptance or decline.
 
 ## 🔬 Tools & Technology Used
-Languages & Frameworks
+**Languages & Frameworks**
  - Ruby 2.7.1
  - Ruby on Rails 6.0.3.1
  - SASS/CSS3
 
-Gems of note
+**Gems of note**
  - [Devise](https://github.com/heartcombo/devise)
  - [Faker](https://github.com/faker-ruby/faker)
- - [HIRB](https://github.com/cldwalker/hirb) MVP Award 🥇
+ - [HIRB](https://github.com/cldwalker/hirb)  (MVP Award 🥇)
 
-Testing
+**Testing**
  - [RSpec 3.9](https://rspec.info/)
 
-Database
+**Database**
  - PostgreSQL
 
-Linters & Quality Control
+**Linters & Quality Control**
  - [Stickler CI](https://stickler-ci.com/)
  - [Rubocop 0.85.0](https://github.com/rubocop-hq/rubocop-rails)
 
-Deployment
+**Deployment**
  - Heroku
- - AWS (static assets)
 
 
 ### 💻 Setup & Use
