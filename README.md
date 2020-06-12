@@ -21,7 +21,6 @@
 </p>
 
 
-
 ## Table of Contents
   - [The Project Brief](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-the-project-brief)
   - [The Nitty Gritty](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-the-nitty-gritty)
