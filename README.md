@@ -5,8 +5,10 @@
   <h1 align="center"> ☝🏽 Stay In Touch</h1>
 
 
-  <p align="center">
-    A social media web app built with Rails
+<h3 align='center'>  
+    A Social Media Web App Built With Rails.
+</h3>
+<p align="center">
     <br />
     <a href="https://github.com/Rhelli/StayInTouch-Social-Media"><strong>Explore This Repository »</strong></a>
     <br />
