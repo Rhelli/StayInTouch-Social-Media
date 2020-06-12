@@ -25,9 +25,9 @@
 
 ## Table of Contents
   - [The Project Brief](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-the-project-brief)
-    - [The Nitty Gritty](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-the-nitty-gritty)
-    - [Tools & Technology Used](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-tools--technology-used)
-    - [Setup & Use](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-setup--use)
+  - [The Nitty Gritty](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-the-nitty-gritty)
+  - [Tools & Technology Used](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-tools--technology-used)
+  - [Setup & Use](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-setup--use)
   - [Showcase](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#%EF%B8%8F-showcase)
   - [Contributions, Issues and Forking](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-contributions-issues-and-forking)
   - [Creator](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-creator)
@@ -37,11 +37,11 @@
 
 ## 🔰 The Project Brief
 
-This is a project included in the Rails module to be completed by students of [Microverse]("https://www.microverse.org/).
+This is a project included in the Rails module to be completed by students of [Microverse](https://www.microverse.org/).
 
-This project sees us tackle a larger, more 'real-world' task in creating a social media web app with all the functionality we've come to expect from social media websites, namely; friendships, invites, posts, comments and likes.
+This project sees us tackle a larger, more complex and realistic task in creating a social media web app with all the functionality we've come to expect from social media websites - friendships, invites, posts, comments and likes.
 
-As this project naturally has a larger remit than previous back-end centric projects that have come before, it is split up into 5 major milestones:
+As this project naturally has a larger remit than previous back-end centric projects that have come before, it is split up into <u>5 major milestones</u>:
  1. Data Architecture & Planning
  2. Creation of friendship models & associations
  3. Improving efficiency of mutual friendship generation & handling
