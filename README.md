@@ -24,25 +24,15 @@
 
 
 ## Table of Contents
-  - [About Gitshoes](https://github.com/Rhelli/Shoes-Github-API/tree/feature/unit_testing#-about-gitshoes)
-    - [What Is It?](https://github.com/Rhelli/Shoes-Github-API/tree/feature/unit_testing#%EF%B8%8F-what-is-it)
-    - [Why Is It?](https://github.com/Rhelli/Shoes-Github-API/tree/feature/unit_testing#%EF%B8%8F-why-is-it)
-    - [Current State & Limitations](https://github.com/Rhelli/Shoes-Github-API/tree/feature/unit_testing#-current-state--limitations)
-  - [Showcase](https://github.com/Rhelli/Shoes-Github-API/tree/feature/unit_testing#%EF%B8%8F-showcase)
-  - [The Nitty-Gritty](https://github.com/Rhelli/Shoes-Github-API/tree/feature/unit_testing#-the-nitty-gritty)
-    - [Languages & Technologies](https://github.com/Rhelli/Shoes-Github-API/tree/feature/unit_testing#languages--technologies)
-    - [Ruby Gems](https://github.com/Rhelli/Shoes-Github-API/tree/feature/unit_testing#ruby-gems)
-  - [How to Use Gitshoes](https://github.com/Rhelli/Shoes-Github-API/tree/feature/unit_testing#-how-to-use-gitshoes)
-    - [Requirements](https://github.com/Rhelli/Shoes-Github-API/tree/feature/unit_testing#requirements)
-    - [Setup](https://github.com/Rhelli/Shoes-Github-API/tree/feature/unit_testing#setup)
-    - [Running Gitshoes](https://github.com/Rhelli/Shoes-Github-API/tree/feature/unit_testing#running-with-gitshoes)
-  - [Contributions, Issues and Forking](https://github.com/Rhelli/Shoes-Github-API/tree/feature/unit_testing#-contributions-issues-and-forking)
-  - [Final Thoughts & Futures](https://github.com/Rhelli/Shoes-Github-API/tree/feature/unit_testing#-final-thoughts--futures)
-  - [Creator](https://github.com/Rhelli/Shoes-Github-API/tree/feature/unit_testing#-creator)
-  - [Show Your Support!](https://github.com/Rhelli/Shoes-Github-API/tree/feature/unit_testing#-show-your-support)
-  - [Acknowledgements](https://github.com/Rhelli/Shoes-Github-API/tree/feature/unit_testing#-acknowledgements)
-  - [Notable Resources](https://github.com/Rhelli/Shoes-Github-API/tree/feature/unit_testing#-noteable-resources)
-  - [Licensing](https://github.com/Rhelli/Shoes-Github-API/tree/feature/unit_testing#%EF%B8%8F-licensing)
+  - [The Project Brief](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-the-project-brief)
+    - [The Nitty Gritty](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-the-nitty-gritty)
+    - [Tools & Technology Used](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-tools--technology-used)
+    - [Setup & Use](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-setup--use)
+  - [Showcase](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#%EF%B8%8F-showcase)
+  - [Contributions, Issues and Forking](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-contributions-issues-and-forking)
+  - [Creator](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-creator)
+  - [Show Your Support!](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-show-your-support)
+  - [Licensing](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#%EF%B8%8F-licensing)
 
 
 ## 🔰 The Project Brief
@@ -58,7 +48,7 @@ As this project naturally has a larger remit than previous back-end centric proj
  4. Deployment to Heroku
  5. Final Touches & Styling
 
-### 🔍 The Nitty Gritty
+## 🔍 The Nitty Gritty
 Posts, comments and likes had been handled for us in the project setup, thus the core challenges in this project were establishing an efficient friendship system whereby users could send invitations as well as receive invitations, all while maintaining a tidy database.
 
 This enforced some ground rules as to how we should generated our models:
@@ -67,7 +57,7 @@ This enforced some ground rules as to how we should generated our models:
 
 Subsequently, an additional medley of controller and helper functions would enable detection of friend request states and existence, enable creation and destruction of requests and allow for updating on friend request acceptance or decline.
 
-### 🔬 Tools & Technology Used
+## 🔬 Tools & Technology Used
 Languages & Frameworks
  - Ruby 2.7.1
  - Ruby on Rails 6.0.3.1
@@ -102,7 +92,7 @@ Setup should be fairly straightforward. You will have to ensure your machine is 
   3. **`cd`** into the root directory of wherever you download this repo. [What does 'cd' mean?](https://www.macworld.com/article/2042378/master-the-command-line-navigating-files-and-folders.html)
   4. Whilst at the root (home) directory of this project, enter **`bundle install`** to install the projects software dependencies.
   5. In your terminal window, enter **`rails server`** to start the server.
-  6. Now navigate to [localhost:4000](localhost:4000) in your browser to start playing around with the webpages!
+  6. Now navigate to **`localhost:4000`** in your browser to start playing around with the webpages!
 
 Alternatively if you'd like to confirm the entire project is passing testing:
   1. **`cd`** into this repository in your terminal
@@ -113,27 +103,100 @@ Alternatively if you'd like to confirm the entire project is passing testing:
 
 ## 🎞️ Showcase
 
-### Authentication & JSON Data
+### Authentication & Signing In
 <p align="center>
 
-<a href="assets/img/login-screen.gif"><img src="assets/img/login-screen.gif" alt="login screen" width="800" height="464"></a>
+<a href="previews/signin.gif"><img src="previews/signin.gif" alt="Sign In" width="800" height="auto"></a>
 
-> Logging in with Gitshoes - Either get directed to the 'Create an Account' page or get directed to the Github Login, where the app is authorised via OAuth.
-
-
-### Searching Github
+> Signing In is facilitated with the Devise Gem and offers additional functionality like password recovery and signing up for a new account.
 
 
-<a href="assets/img/search-screen.gif"><img src="assets/img/search-screen.gif" alt="search screen" width="800" height="464"></a>
-
-> Gitshoes uses 'Launchy' to search Github's code base
-
-### The Information Window
+### The Navbar & Friend Requests Dropdown Menu
 
 
-<a href="assets/img/info-screen.gif"><img src="assets/img/info-screen.gif" alt="info screen" width="800" height="464"></a>
+<a href="previews/navbar.gif"><img src="previews/navbar.gif" alt="The Navbar" width="800" height="auto"></a>
 
-> A brief information screen detailing the what's and why's of Gitshoes.
+> A closer look at the site-wide navbar and Facebook-style dynamically populated friend requests dropdown.
+
+### Viewing Friend Requests From The Navbar
+
+
+<a href="previews/navbar-dropdown.gif"><img src="previews/navbar-dropdown.gif" alt="Friend Request Dropdown" width="800" height="auto"></a>
+
+> A closer look at the friend request dropdown - A notification ball displays when the user receives new friend requests and the list displays new requests. The user is given the option to accept or decline. Additionally, suggested (non-friended) users are listed below.
+
+### Creating A New Post
+
+
+<a href="previews/creating-a-post.gif"><img src="previews/creating-a-post.gif" alt="Creating A New Post" width="800" height="auto"></a>
+
+> From the homepage the user can create new posts which are fed into the user and user's respective friends' timelines upon submission.
+
+### Prompting and Encouraging Users To Post
+
+
+<a href="previews/new-post-title.gif"><img src="previews/new-post-title.gif" alt="Randomised Post Title" width="800" height="auto"></a>
+
+> The post title relays a series of different messages to the user to engage and encourage the user to post more.
+
+### Liking & Commenting On Posts
+
+
+<a href="previews/post-comments-likes.gif"><img src="previews/post-comments-likes.gif" alt="Liking and Commenting On Posts" width="800" height="auto"></a>
+
+> Users are able to easily create a basic thread beneath the post's main content and like or unlike a post.
+
+### The Friendships Page
+
+
+<a href="previews/friendships-page.gif"><img src="previews/friendships-page.gif" alt="The Friendship Page" width="800" height="auto"></a>
+
+> Selecting 'Friend Requests' from the navbar takes the user to the Friendships page, where a full page view of new invites and suggested users can be seen.
+
+</p>
+
+### Adding Friends From The Friendship Page
+
+
+<a href="previews/friend-requests-from-friendship-index.gif"><img src="previews/friend-requests-from-friendship-index.gif" alt="Adding Friends From The Friendship Page" width="800" height="auto"></a>
+
+> Users can easily send friend requests from the list of suggested users. New pending friend requests appear at the top of the page.
+
+</p>
+
+### Accepting & Declining Requests From The Friendship Page
+
+
+<a href="previews/accepting-requests-from-friendship-index.gif"><img src="previews/accepting-requests-from-friendship-index.gif" alt="Friend Requests on The Friendship Page" width="800" height="auto"></a>
+
+> Incoming friend requests will also appear at the top of the page, prior to 'Pending Requests'. Accepting will add the sender of the invitation to the users friends. Declining will delete the friendship (and friend request by extension).
+
+</p>
+
+### The User Index
+
+
+<a href="previews/user-index.gif"><img src="previews/user-index.gif" alt="The User Index" width="800" height="auto"></a>
+
+> As an alternative to the Friendship page, the User Index will display all users - friends, non-friends and pending requests.
+
+</p>
+
+### The User Profile
+
+
+<a href="previews/user-profile.gif"><img src="previews/user-profile.gif" alt="The User Profile" width="800" height="auto"></a>
+
+> The user profile displays the users own posts and offers familiar functionality such as commenting on and liking their posts.
+
+</p>
+
+### Friend Requests & Status From The User Profile
+
+
+<a href="previews/user-profile-buttons.gif"><img src="previews/user-profile-buttons.gif" alt="User Profile Buttons" width="800" height="auto"></a>
+
+> The user profile also features 'Add Friend', 'Request Pending' and 'Friends' buttons.
 
 </p>
 
