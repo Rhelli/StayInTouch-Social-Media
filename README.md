@@ -1,4 +1,3 @@
-
 <p align="center">
   <img src="previews/preview-image.png" alt="Stay In Touch's Home Page" width="900" height="auto">
 
@@ -10,7 +9,7 @@
 </h3>
 <p align="center">
     <br />
-    <a href="https://github.com/Rhelli/StayInTouch-Social-Media"><strong>Explore This Repository »</strong></a>
+    <a href="https://murmuring-scrubland-45037.herokuapp.com/"><strong>Visit The Site »</strong></a>
     <br />
     <br />
     <a href="https://github.com/Rhelli/StayInTouch-Social-Media/archive/develop.zip">Download this repository</a>
@@ -20,7 +19,6 @@
     <a href="https://github.com/Rhelli/StayInTouch-Social-Media/fork">Fork It</a>
   </p>
 </p>
-
 
 
 ## Table of Contents
@@ -80,7 +78,6 @@ Subsequently, an additional medley of controller and helper functions would enab
 
 **Deployment**
  - Heroku
-
 
 ### 💻 Setup & Use
 
