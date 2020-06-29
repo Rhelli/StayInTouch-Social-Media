@@ -202,7 +202,7 @@ Alternatively if you'd like to confirm the entire project is passing testing:
 
 Contributions, issues and feature requests are more than welcome! 
 
-If you have any problems running or setting up Gitshoes, please submit it as a bug on the [issues page.](https://github.com/Rhelli/StayInTouch-Social-Media/issues) right away!
+If you have any problems running or setting this project up, please submit it as a bug on the [issues page.](https://github.com/Rhelli/StayInTouch-Social-Media/issues) right away!
 
 If you want to make your own changes, modifications or improvements, go ahead and Fork it!
 1. [Fork it](https://github.com/Rhelli/StayInTouch-Social-Media/fork)
